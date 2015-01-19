@@ -1,0 +1,124 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:ads="http://schemas.android.com/apk/res-auto"       
+    android:layout_width="fill_parent"
+    android:background="#005999"
+    android:layout_height="fill_parent" >
+<LinearLayout 
+    android:id="@+id/LinearLayout02" 
+    android:layout_height="wrap_content" 
+    android:layout_width="fill_parent" 
+    android:layout_alignParentLeft="true"
+	android:layout_marginTop="6dp"
+    android:layout_alignParentBottom="true">
+
+    <Button 
+        android:id="@+id/Button02" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+    android:textColor="#FFFFFF"
+    android:background="#FF9D00"
+        android:layout_weight="1" 
+        android:layout_marginRight="2dp"
+        android:text="確定">
+    </Button>  
+    <Button 
+        android:id="@+id/Button03" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:layout_weight="1" 
+        android:background="#FF9D00"
+    android:textColor="#FFFFFF"
+        android:text="返回">
+    </Button>
+
+</LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editText1" >
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView2"
+        android:ellipsize="start"
+        android:inputType="number"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="輸入你的終極數字"
+        android:lines="1"
+        android:textColor="#F5D002"
+        android:textColorHint="#F5D002"
+        android:textSize="42sp" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="48sp"
+        android:textColor="#FFFFFF"
+        android:text="終極密碼" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:text="xxx-xxx"
+        android:textColor="#D9D9D9"
+        android:layout_marginBottom="30dp"
+        android:textSize="36sp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editText1"
+        android:ellipsize="start"
+        android:gravity="center"
+        android:singleLine="true"
+        android:lines="1"
+        android:textColor="#D6D6D6"
+        android:textColorHint="#D6D6D6"
+        android:hint="輸入留言"
+        android:textSize="30sp"
+        android:maxLength="15"
+        android:ems="10" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editText2"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-6177946832323310/8693094123" >
+    </com.google.android.gms.ads.AdView>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/adView"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="注意：參加此遊戲者需要點選並開啟上方廣告後才能送出！"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp" />
+
+</RelativeLayout>

@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="300dp"
+    android:background="#009989" >
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="5dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="#08359E"
+            android:padding="3dp"
+            android:text="0人回應"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rl1"
+        android:gravity="center_horizontal"
+        android:padding="3dp"
+        android:text="[求助] 女友因為工作壓力變成恐怖情人"
+        android:textColor="#FFFFFFFF"
+        android:textColorHighlight="#FFFFFFFF"
+        android:textStyle="bold"
+        android:textSize="19sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:textSize="12sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textColor="#FFFFFF"
+        android:text="目前跟女友算是異地戀愛 女友是個很熱衷工作的處女座，喜歡追求完美，也喜歡把工作攬到自己頭上 但是她的EQ和抗壓性相當差…" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textView4"
+        android:layout_below="@+id/textView4"
+        android:text="mmzznnxxbbcc"
+        android:textColor="#CFCFCF"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textView3"
+        android:layout_below="@+id/textView3"
+        android:text="3分鐘前"
+        android:textColor="#E3E3E3"
+        android:textSize="10sp" />
+
+</RelativeLayout>

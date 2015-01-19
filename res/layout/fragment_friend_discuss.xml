@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+<GridView
+    android:id="@+id/grid_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_above="@+id/LinearLayout02"
+    android:layout_below="@+id/textView1"
+    android:gravity="center"
+    android:horizontalSpacing="2dp"
+    android:numColumns="2"
+    android:stretchMode="columnWidth"
+    android:verticalSpacing="2dp" >
+ 
+</GridView>
+<LinearLayout 
+    android:id="@+id/LinearLayout02" 
+    android:layout_height="wrap_content" 
+    android:layout_width="fill_parent" 
+    android:layout_marginTop="2dp"
+    android:layout_alignParentBottom="true">
+    <Button 
+        android:id="@+id/Button02"
+        android:layout_width="wrap_content" 
+        android:layout_height="40dp" 
+        android:background="#F0EEED"
+        android:textColor="#424242"
+        android:layout_marginRight="1dp"
+        android:textSize="16sp"
+        android:layout_weight="1" android:text="我想要新增主題">
+    </Button>
+
+</LinearLayout>
+
+<ProgressBar
+    android:id="@+id/progressBar1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true" />
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/LinearLayout02"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/LinearLayout02"
+        android:layout_marginBottom="2dp"
+        android:background="#2A66A1"
+        android:padding="5dp"
+        android:text="請勿在討論區發表不相關或敏感議題，如情色話題、探究個人隱私、廣告文……等，違反規定者，予以刪除，不另通知。多次違規者，停權處分。"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp" />
+</RelativeLayout>

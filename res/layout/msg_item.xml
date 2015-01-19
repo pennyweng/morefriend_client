@@ -1,0 +1,101 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingTop="4dp"
+    android:paddingLeft="4dp"
+    android:paddingBottom="4dp"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/emptyhead" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="1dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="4dp"
+        android:layout_toRightOf="@+id/imageView1"
+        android:src="@drawable/emptyhead" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignTop="@+id/imageView2"
+        android:textSize="10sp"
+                android:textColor="#ABABAB"
+        android:text="penny"
+        />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_toRightOf="@+id/textView2"
+        android:textSize="10sp" 
+                android:textColor="#ABABAB"
+        android:text="對" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView5"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_toRightOf="@+id/textView5"
+        android:text="janie"
+        android:textColor="#ABABAB"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toRightOf="@+id/textView3"
+        android:text="說:"
+                android:textColor="#ABABAB"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/textView3"
+        android:text="08-10 14:00"
+        android:layout_marginRight="2dp"
+        android:textColor="#ABABAB"
+        android:textSize="10sp" />
+
+    <Button
+        android:id="@+id/button1"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginRight="2dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView4"
+android:background="#009989"
+        android:text="回覆"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button1"
+        android:layout_toLeftOf="@+id/textView4"
+        android:layout_toRightOf="@+id/imageView2"
+        android:text="您好,我是來自于台灣的地方" />
+
+</RelativeLayout>

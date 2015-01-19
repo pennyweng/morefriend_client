@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#FF9D00"
+        android:padding="10dp"
+        android:text="檢舉他人"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/emptyhead" />
+
+
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView1"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_toRightOf="@+id/imageView1"
+        android:ems="10"
+        android:hint="請輸入檢舉理由(援交，色情...)"
+        android:textSize="14sp"
+        android:maxLength="40"
+        android:textColor="#3D3D3D" />
+
+<LinearLayout
+    android:id="@+id/LinearLayout02"
+    android:layout_marginTop="2dp"
+        android:padding="1dp"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentRight="true"
+    android:layout_below="@+id/imageView1" >
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="送出"
+        android:textSize="14sp"
+        android:textColor="#666666" />
+
+    <Button
+        android:id="@+id/Button03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="取消"
+        android:textSize="14sp"
+        android:textColor="#666666" />
+</LinearLayout>
+
+</RelativeLayout>

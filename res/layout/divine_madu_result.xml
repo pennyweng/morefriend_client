@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#990800" >
+
+    <LinearLayout
+        android:id="@+id/LinearLayout02"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="6dp" >
+
+        <Button
+            android:id="@+id/Button03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FF9D00"
+            android:text="返回"
+            android:textColor="#FFFFFF" >
+        </Button>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:text="六十甲子籤"
+        android:textColor="#FFFFFF"
+        android:textSize="48sp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="第一籤" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:text="日出便見風雲散\n光明清靜照世間\n一向前途通大道\n萬事清吉保平安"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView2"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="18dp"
+        android:textColor="#FFD8D6"
+        android:textSize="22sp"
+        android:text="這個籤詩所要表達的是想要有好的感情雙方必須要坦白，不能有所隱瞞，如此所有的猜忌、麻煩，才能雲淡風輕。若是刻意隱瞞，則是不吉。想要結婚的人，若有長輩還是朋友介紹的，可以多加參考。" />
+
+</RelativeLayout>

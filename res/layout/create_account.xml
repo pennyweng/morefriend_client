@@ -1,0 +1,307 @@
+        <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/scrollView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >
+<RelativeLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="2dp" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/emptyhead" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/radioButton1"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="5dp"
+            android:textSize="16sp"
+            android:textColor="#828282" 
+            android:layout_marginTop="5dp"           
+            android:text="基本資訊" />
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/checkBox1"
+            android:layout_below="@+id/textView2"
+            android:checked="true"
+            android:textSize="14sp"
+            android:text="男"
+            android:textColor="#696969" />
+
+        <RadioButton
+            android:id="@+id/RadioButton01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/radioButton1"
+            android:layout_alignBottom="@+id/radioButton1"
+            android:layout_toRightOf="@+id/radioButton1"
+            android:textSize="14sp"
+            android:text="女"
+            android:textColor="#696969" />
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/radioButton1"
+            android:layout_toRightOf="@+id/imageView1"
+            android:ems="10"
+            android:hint="輸入您的LINE ID"
+            android:maxLength="20"
+            android:textColor="#696969"
+            android:textSize="14sp" />
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/editText1"
+            android:layout_below="@+id/editText1"
+            android:text="ID暫時不公開"
+            android:textColor="#696969"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/interestrl"
+        android:layout_alignLeft="@+id/relativeLayout1"
+        android:layout_below="@+id/relativeLayout1" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:textSize="16sp"
+            android:textColor="#828282"
+            android:text="我的興趣(最多三項)" />
+
+        <GridView
+            android:id="@+id/gridView1"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_below="@+id/textView1"
+            android:columnWidth="70dp"
+            android:gravity="center"
+            android:horizontalSpacing="5dp"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="5dp" >
+
+        </GridView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/placerl"
+        android:layout_alignLeft="@+id/interestrl"
+        android:layout_below="@+id/interestrl" >
+
+        <TextView
+            android:id="@+id/placetv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:textSize="16sp"
+            android:textColor="#828282"
+            android:text="我的生活地點(最多三項)" />
+
+        <GridView
+            android:id="@+id/placegv"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_below="@+id/placetv"
+            android:columnWidth="70dp"
+            android:gravity="center"
+            android:horizontalSpacing="5dp"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="5dp" >
+
+        </GridView>
+    </RelativeLayout>   
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/careerrl"
+        android:layout_alignLeft="@+id/placerl"
+        android:layout_below="@+id/placerl" >
+
+        <TextView
+            android:id="@+id/careertv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:textSize="16sp"
+            android:textColor="#828282"
+            android:text="我的職業專長(最多三項)" />
+
+        <GridView
+            android:id="@+id/careergv"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_below="@+id/careertv"
+            android:columnWidth="70dp"
+            android:gravity="center"
+            android:horizontalSpacing="5dp"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="5dp" >
+
+        </GridView>
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/oldrl"
+        android:layout_alignLeft="@+id/careerrl"
+        android:layout_below="@+id/careerrl" >
+
+        <TextView
+            android:id="@+id/oldtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:textSize="16sp"
+            android:textColor="#828282"
+            android:text="我的年紀範圍" />
+
+        <GridView
+            android:id="@+id/oldgv"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@+id/oldtv"
+            android:columnWidth="70dp"
+            android:gravity="center"
+            android:horizontalSpacing="5dp"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="5dp" >
+
+        </GridView>
+    </RelativeLayout>
+     <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/calrl"
+        android:layout_alignLeft="@+id/oldrl"
+        android:layout_below="@+id/oldrl" >
+
+        <TextView
+            android:id="@+id/caltv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:textSize="16sp"
+            android:textColor="#828282"
+            android:text="我的星座" />
+
+        <GridView
+            android:id="@+id/calgv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/caltv"
+            android:columnWidth="70dp"
+            android:gravity="center"
+            android:horizontalSpacing="5dp"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="5dp" >
+
+        </GridView>
+    </RelativeLayout>   
+     <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/motionrl"
+        android:layout_alignLeft="@+id/calrl"
+        android:layout_below="@+id/calrl" >
+
+        <TextView
+            android:id="@+id/motiontv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:textSize="16sp"
+            android:textColor="#828282"
+            android:text="我的個性" />
+
+        <GridView
+            android:id="@+id/motiongv"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_below="@+id/motiontv"
+            android:columnWidth="70dp"
+            android:gravity="center"
+            android:horizontalSpacing="5dp"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="5dp" >
+
+        </GridView>
+    </RelativeLayout>       
+     
+<LinearLayout 
+    android:id="@+id/LinearLayout02" 
+    android:layout_height="wrap_content" 
+    android:layout_width="fill_parent" 
+    android:layout_below="@+id/deletebt"
+    android:layout_alignParentBottom="true">
+
+    <Button 
+        android:id="@+id/Button02" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:textColor="#696969" 
+        android:layout_weight="1" android:text="儲存並上傳">
+    </Button>
+    <Button 
+        android:id="@+id/Button03" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:layout_weight="1" 
+         android:textColor="#696969" 
+        android:text="取消">
+    </Button>
+
+</LinearLayout>
+
+<Button
+    android:id="@+id/deletebt"
+    android:layout_width="wrap_content"
+    android:layout_height="30dp"
+    android:layout_alignRight="@+id/motionrl"
+    android:layout_below="@+id/motionrl"
+    android:background="#12A165"
+    android:textColor="#FFFFFF"
+    android:textSize="12sp"
+    android:text="移除資料" />
+            
+</RelativeLayout>
+</ScrollView>

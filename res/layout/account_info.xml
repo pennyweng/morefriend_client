@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:background="#E6E6E6"
+    android:layout_height="fill_parent" >
+
+<GridView
+    android:padding="5dp"
+    android:id="@+id/gridView1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_above="@+id/LinearLayout02"
+    android:layout_below="@+id/imageView1"
+    android:layout_margin="5dp"
+    android:minHeight="500dp"
+
+    android:gravity="center"
+    android:horizontalSpacing="5dp"
+    android:numColumns="3"
+    android:stretchMode="columnWidth"
+    android:verticalSpacing="5dp" >
+
+</GridView>
+
+<LinearLayout 
+    android:id="@+id/LinearLayout02" 
+    android:layout_height="wrap_content" 
+    android:layout_width="fill_parent" 
+    android:layout_alignParentLeft="true"
+	android:layout_marginTop="6dp"
+    android:layout_alignParentBottom="true">
+
+    <Button 
+        android:id="@+id/Button02" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+    android:textColor="#666666"
+    android:background="#D4D4D4"
+        android:layout_weight="1" 
+        android:layout_marginRight="2dp"
+        android:text="追蹤+">
+    </Button>
+    <Button 
+        android:id="@+id/Button04" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+    android:textColor="#666666"
+    android:background="#D4D4D4"
+        android:layout_weight="1"
+        android:layout_marginRight="2dp"
+        android:text="送訊息">
+    </Button>    
+    <Button 
+        android:id="@+id/Button03" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:layout_weight="1" 
+        android:background="#D4D4D4"
+    android:textColor="#666666"
+        android:text="封鎖">
+    </Button>
+
+</LinearLayout>
+
+<ImageView
+    android:id="@+id/imageView1"
+    android:layout_width="match_parent"
+    android:layout_height="310dp"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentTop="true"
+    android:scaleType="centerCrop"
+    android:src="@drawable/mailicon" />
+
+<TextView
+    android:id="@+id/TextView01"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/gridView1"
+    android:layout_alignParentLeft="true"
+    android:background="#787878"
+    android:gravity="bottom"
+    android:text="xxxxxxxx"
+    android:textColor="#FFFFFF"
+    android:textSize="12sp"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp"
+    android:paddingRight="20dp"
+    android:paddingLeft="4dp"
+    android:visibility="visible" />
+
+<TextView
+    android:id="@+id/textView1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignBaseline="@+id/TextView01"
+    android:layout_alignBottom="@+id/TextView01"
+    android:layout_alignParentRight="true"
+    android:background="#9FE00004"
+    android:paddingLeft="5dp"
+    android:text="檢舉"
+    android:textColor="#FFFFFF" />
+
+</RelativeLayout>

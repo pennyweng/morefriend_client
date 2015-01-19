@@ -1,0 +1,89 @@
+<RelativeLayout     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+	xmlns:ads="http://schemas.android.com/apk/res-auto" 
+	android:background="#005999"   
+	android:paddingTop="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <com.astuetz.PagerSlidingTabStrip
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="48dip" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tabs"
+        tools:context=".MainActivity" />    
+    
+<ListView
+    android:id="@+id/grid_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_above="@+id/rl2"
+    android:layout_below="@+id/textView2"
+    android:divider="#005999"
+    android:dividerHeight="5dp"
+    android:gravity="center"
+    android:horizontalSpacing="2dp"
+    android:numColumns="1"
+    android:padding="5dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:stretchMode="columnWidth"
+    android:verticalSpacing="2dp" >
+ 
+</ListView>
+
+    <RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-6177946832323310/8693094123" >
+    </com.google.android.gms.ads.AdView>
+        
+    </RelativeLayout>
+
+
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textColor="#FFFFFF"
+        android:visibility="invisible"
+        android:textSize="18sp"
+        android:text="遊戲尚未結束，無獲勝人員資料" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        android:padding="5dp"
+        android:text="請中獎者於14天內主動加入版主帳號ahappychat，並告知您的中獎碼，以利後續寄送作業。若未於14天內通知版主或中獎碼不正確者，將喪失領獎資格。獎品將於資料確認後兩週內寄出，若有問題歡迎跟版主詢問。" />
+
+</RelativeLayout>

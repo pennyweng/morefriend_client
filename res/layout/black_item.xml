@@ -1,0 +1,103 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#DBDBDB"
+	android:id="@+id/rl1"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop" />
+
+<!--     <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:background="#016E62"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:text="傳送訊息" />
+ -->
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:lines="2"
+        android:text="XXX"
+        android:typeface="monospace"
+        android:textColor="#5E5E5E"
+        android:textSize="13sp" />
+    
+<LinearLayout 
+    android:id="@+id/LinearLayout02" 
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true">
+<Button 
+        android:id="@+id/button1" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:background="#F0CC02"
+        android:textColor="#424242"
+        android:layout_weight="1" 
+        android:text="解除封鎖">
+    </Button>
+
+
+
+</LinearLayout>
+
+<TextView
+    android:id="@+id/textView2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/imageView1"
+    android:layout_centerHorizontal="true"
+    android:paddingLeft="2dp"
+    android:paddingRight="2dp"
+    android:layout_marginTop="25dp"
+    android:typeface="monospace"
+    android:text="我的LINE ID"
+    android:textColor="#878787"
+    android:textSize="9sp" />
+
+<TextView
+    android:id="@+id/lid"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignBottom="@+id/imageView1"
+    android:layout_alignRight="@+id/imageView1"
+    android:background="#AFBD0013"
+    android:layout_marginBottom="1dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="1dp"
+    android:text="xxxx"
+    android:textColor="#DBDBDB"
+    android:textSize="9sp"
+    android:typeface="monospace" />
+
+<TextView
+    android:id="@+id/textView1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_alignRight="@+id/imageView1"
+    android:background="#CF0048"
+    android:gravity="center"
+    android:padding="2dp"
+    android:text="刪除"
+    android:textColor="#FFFFFF"
+    android:visibility="invisible"
+    android:textSize="12sp" />
+    
+</RelativeLayout>

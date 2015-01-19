@@ -1,0 +1,82 @@
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+<LinearLayout
+    android:id="@+id/LinearLayout02"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@+id/textView2" >
+
+    <Button
+        android:id="@+id/Button02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="2dp"
+        android:layout_weight="1"
+        android:background="#D4D4D4"
+        android:text="儲存"
+        android:textColor="#666666" />
+
+    <Button
+        android:id="@+id/Button04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="2dp"
+        android:layout_weight="1"
+        android:background="#D4D4D4"
+        android:text="取消"
+        android:textColor="#666666" />
+</LinearLayout>
+
+<TextView
+    android:id="@+id/TextView01"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft = "10dp"
+    android:text="通知設定"
+    android:textSize="18sp" />
+
+<Spinner
+    android:id="@+id/spinner1"
+    android:layout_width="110dp"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_below="@+id/TextView01"
+    android:gravity="right" />
+
+<TextView
+    android:id="@+id/textView1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignLeft="@+id/TextView01"
+    android:layout_alignTop="@+id/spinner1"
+    android:layout_marginTop="16dp"
+    android:text="每隔多久通知"
+    android:textSize="18sp" />
+
+<TextView
+    android:id="@+id/textView2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignLeft="@+id/textView1"
+    android:layout_below="@+id/textView1"
+    android:layout_toLeftOf="@+id/spinner1"
+    android:text="只要有人傳訊息給您, 最晚隔多久要通知您"
+    android:textColor="#878787"
+    android:textSize="11sp" />
+
+<ToggleButton
+    android:id="@+id/toggleButton1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignLeft="@+id/spinner1"
+    android:layout_alignParentTop="true"
+    android:text="ToggleButton" />
+
+</RelativeLayout>

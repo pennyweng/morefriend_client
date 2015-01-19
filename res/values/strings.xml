@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">分類交友</string>
+    <string name="title_section1">依興趣尋找</string>
+    <string name="title_section2">依地方尋找</string>
+    <string name="title_section3">依職業尋找</string>
+    <string name="title_section4">依年紀尋找</string>
+    <string name="title_section6">依星座尋找</string>
+    <string name="title_section8">最新討論話題</string>      
+    <string name="title_section7">正在線上的LINE友</string>        
+    <string name="title_section5">LINE群組聊天室</string>
+    <string name="title_section9">趣味比賽區</string>    
+    <string name="action_settings">基本資料設定</string>
+    <string name="search_settings">查詢條件設定</string>
+    <string name="notify_settings">通知設定</string>
+    <string name="hide_settings">隱藏設定</string>
+    <string name="msg_settings">訊息中心</string>
+</resources>

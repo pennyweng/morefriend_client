@@ -1,0 +1,91 @@
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+<TextView
+    android:id="@+id/TextView01"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft = "10dp"
+    android:text="通知設定"
+    android:textSize="18sp" />
+
+<TextView
+    android:id="@+id/textView1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignLeft="@+id/TextView01"
+    android:layout_below="@+id/toggleButton1"
+    	android:padding="15dp"  
+    android:text="音效"
+    android:textColor="#878787"
+    android:textSize="16sp" />
+
+<ToggleButton
+    android:id="@+id/toggleButton1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_marginLeft="24dp"
+    android:layout_toRightOf="@+id/TextView01"
+    android:text="ToggleButton" />
+
+<ToggleButton
+    android:id="@+id/ToggleButton01"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignLeft="@+id/toggleButton1"
+    android:layout_below="@+id/toggleButton1"
+    android:text="ToggleButton" />
+
+<ToggleButton
+    android:id="@+id/ToggleButton02"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignLeft="@+id/ToggleButton01"
+    android:layout_below="@+id/ToggleButton01"
+    android:text="ToggleButton" />
+
+<TextView
+    android:id="@+id/TextView02"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignLeft="@+id/textView1"
+    android:layout_alignTop="@+id/ToggleButton02"
+    android:text="震動"
+    android:textColor="#878787"
+    	android:padding="15dp"  
+    android:textSize="16sp" />
+
+<LinearLayout
+    android:id="@+id/LinearLayout02"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@+id/TextView02" >
+
+    <Button
+        android:id="@+id/Button02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="2dp"
+        android:layout_weight="1"
+        android:background="#D4D4D4"
+        android:text="儲存"
+        android:textColor="#666666" />
+
+    <Button
+        android:id="@+id/Button04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="2dp"
+        android:layout_weight="1"
+        android:background="#D4D4D4"
+        android:text="取消"
+        android:textColor="#666666" />
+</LinearLayout>
+
+</RelativeLayout>

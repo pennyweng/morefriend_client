@@ -1,0 +1,123 @@
+<RelativeLayout     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+	xmlns:ads="http://schemas.android.com/apk/res-auto"   
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jookershop.linefriend.MainActivity$PlaceholderFragment" >
+    
+
+     <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"        
+        android:layout_alignParentLeft="true"
+        android:visibility="invisible"
+    android:paddingLeft="1dp"
+    android:paddingRight="1dp"
+    android:paddingTop="1dp"        
+        android:background="#A3A948"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="依興趣尋找/欣賞電影"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="#A3A948"
+            android:text="返回"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+    </RelativeLayout>
+    
+	<RelativeLayout
+        android:id="@+id/rl3"
+    	android:layout_below="@+id/rl"          
+        android:background="#D14366"
+        android:layout_alignParentLeft="true"
+ 
+    android:paddingLeft="1dp"
+    android:paddingRight="1dp"        
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+	<TextView
+	    android:id="@+id/notifymsg"
+	    android:layout_margin="13dp"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_centerVertical="true"
+	    android:text="您有新訊息, 請到訊息中心讀取！"
+	    android:textColor="#FFFFFF"
+	    android:textSize="13sp" />
+        
+    </RelativeLayout>  
+     
+    <android.support.v4.app.FragmentTabHost
+        android:id="@android:id/tabhost"
+            	android:layout_below="@+id/rl3" 
+            	    android:layout_above="@+id/rl2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    android:paddingBottom="1dp"
+    android:paddingLeft="1dp"
+    android:paddingRight="1dp"        
+        android:layout_alignParentLeft="true"
+        >
+
+		  <LinearLayout
+		   android:orientation="vertical"
+		   android:id="@+id/lla"
+		   android:background="#FFFFFF"
+		   android:layout_width="match_parent"
+		   android:layout_height="match_parent">
+		
+		     <TabWidget
+		     android:id="@android:id/tabs" 
+		     android:orientation="horizontal"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"
+		     android:layout_weight="0"/>
+		
+		     <FrameLayout
+		     android:id="@android:id/tabcontent"
+		     android:layout_width="0dp"
+		     android:layout_height="0dp"
+		     android:layout_weight="0"/>
+		
+		     <FrameLayout
+		     android:id="@+id/realtabcontent"
+		     android:background="#FFFFFF"
+		     android:layout_width="match_parent"
+		     android:layout_height="0dp"
+		     android:layout_weight="1"/>
+		
+		   </LinearLayout>
+    </android.support.v4.app.FragmentTabHost>
+    
+    <RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-6177946832323310/8693094123" >
+    </com.google.android.gms.ads.AdView>
+        
+    </RelativeLayout>
+</RelativeLayout>

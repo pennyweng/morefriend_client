@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jookershop.linefriend"
+    android:versionCode="6"
+    android:versionName="2.0.1" >
+    
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jookershop.linefriend1"
+    android:versionCode="1"
+    android:versionName="1.0.0" >    

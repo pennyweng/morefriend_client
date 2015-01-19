@@ -1,0 +1,126 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#005999" >
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rl1"
+        android:gravity="center_horizontal"
+        android:padding="3dp"
+        android:text="xxx"
+        android:textColor="#FCFCFC"
+        android:textColorHighlight="#FFFFFFFF"
+        android:textStyle="bold"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:text="xxx"
+        android:padding="5dp"
+        android:textColor="#DEDEDE" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView5"
+        android:layout_below="@+id/textView5"
+        android:layout_marginTop="17dp"
+        android:paddingLeft="5dp"
+        android:text="開獎目標及方式"
+        android:layout_marginBottom="3dp"
+        android:textColor="#FAF605"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView6"
+        android:layout_below="@+id/textView6"
+        android:paddingLeft="5dp"
+        android:text="xxx"
+        android:textColor="#DEDEDE" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView01"
+        android:layout_below="@+id/TextView01"
+        android:layout_marginTop="15dp"
+        android:text="有誰參加"
+        android:paddingLeft="5dp"
+        android:textColor="#FAF605"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/Button02"
+        android:background="#E6A100"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="加入抽獎"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/Button01"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/TextView02"
+        android:paddingLeft="5dp"
+        android:text="詳細名單"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Button01"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="5dp"
+        android:layout_marginTop="15dp"        
+        android:text="我的抽獎號碼"
+        android:textColor="#FAF605"
+                
+        android:textSize="18sp" />
+    <Button
+        android:id="@+id/Button02"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/TextView03"
+        android:paddingLeft="5dp"
+        android:text="詳細號碼"
+        android:layout_marginBottom="30dp"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp" />    
+    
+</RelativeLayout>
