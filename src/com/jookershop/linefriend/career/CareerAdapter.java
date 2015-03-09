@@ -6,10 +6,10 @@ import java.util.HashMap;
 
 import com.jookershop.linefriend.Constants;
 import com.jookershop.linefriend.MainActivity;
-import com.jookershop.linefriend3.R;
-import com.jookershop.linefriend3.R.drawable;
-import com.jookershop.linefriend3.R.id;
-import com.jookershop.linefriend3.R.layout;
+import com.jookershop.linefriend4.R;
+import com.jookershop.linefriend4.R.drawable;
+import com.jookershop.linefriend4.R.id;
+import com.jookershop.linefriend4.R.layout;
 import com.jookershop.linefriend.friend.AllFriendFragment;
 import com.jookershop.linefriend.friend.FriendFragment;
 import com.jookershop.linefriend.subcategory.SubCategoryFragment;

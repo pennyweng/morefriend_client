@@ -15,7 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
 public class AllRaceAdapter extends ArrayAdapter<GameItem> {

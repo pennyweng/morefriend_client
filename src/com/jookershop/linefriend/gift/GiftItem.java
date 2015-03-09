@@ -33,9 +33,62 @@ public class GiftItem implements Serializable{
 	private long createTime;
 	private int clickCount;
 	private long finishTime;
+	private String code;
+	private int baseMoney;
+	private boolean showReport;
+	private int status;
+	private int msgCount;
+	private long currentCount;
+	private long sendCount;
+	private int nMaxCount;
 	
 	public static String TYPE_LINE = "FR_LINE";
 	public static String TYPE_MONEY = "FR_MONY";
+	public static String TYPE_BAG = "FR_BAG";
+	public static String TYPE_SE = "FR_SE";
+
+	
+	public long getSendCount() {
+		return sendCount;
+	}
+
+
+
+
+	public void setSendCount(long sendCount) {
+		this.sendCount = sendCount;
+	}
+
+
+
+
+	public long getCurrentCount() {
+		return currentCount;
+	}
+
+
+
+
+	public void setCurrentCount(long currentCount) {
+		this.currentCount = currentCount;
+	}
+
+
+
+
+	public int getnMaxCount() {
+		return nMaxCount;
+	}
+
+
+
+
+	public void setnMaxCount(int nMaxCount) {
+		this.nMaxCount = nMaxCount;
+	}
+
+
+
 
 	public static GiftItem genPostItem( JSONObject jo) {
 		GiftItem pi = new GiftItem();
@@ -50,23 +103,101 @@ public class GiftItem implements Serializable{
 					pi.setType(jj.getString("type"));				
 				if(jj.has("max_count") && !jj.isNull("max_count"))
 					pi.setMaxCount(jj.getInt("max_count"));
+				if(jj.has("max_ncount") && !jj.isNull("max_ncount"))
+					pi.setnMaxCount(jj.getInt("max_ncount"));				
 				if(jj.has("ct") && !jj.isNull("ct"))
 					pi.setCreateTime(jj.getLong("ct"));
 				if(jj.has("img") && !jj.isNull("img"))
 					pi.setImgUrl(jj.getString("img"));	
 				if(jj.has("position") && !jj.isNull("position"))
-					pi.setPosition(jj.getInt("position"));	
+					pi.setPosition(jj.getInt("position"));
+				if(jj.has("base_money") && !jj.isNull("base_money"))
+					pi.setBaseMoney(jj.getInt("base_money"));				
 			}
 			
 			if(jo.has("cc") && !jo.isNull("cc"))
 				pi.setClickCount(jo.getInt("cc"));
 			if(jo.has("lt") && !jo.isNull("lt"))
-				pi.setFinishTime(jo.getLong("lt"));			
+				pi.setFinishTime(jo.getLong("lt"));	
+			
+			if(jo.has("new_code") && !jo.isNull("new_code"))
+				pi.setCode(jo.getString("new_code"));
+			
+			if(jo.has("status") && !jo.isNull("status")) {
+				pi.setStatus(jo.getInt("status"));
+				if(pi.getStatus() == -1) {
+					pi.setShowReport(false);
+				} else pi.setShowReport(true);
+			}
+			
+			if(jo.has("leave_msg_count") && !jo.isNull("leave_msg_count"))
+				pi.setMsgCount(jo.getInt("leave_msg_count"));
+			if(jo.has("cn") && !jo.isNull("cn"))
+				pi.setCurrentCount(jo.getLong("cn"));
+			if(jo.has("sc") && !jo.isNull("sc"))
+				pi.setSendCount(jo.getLong("sc"));
+			
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
 
 		return pi;
+	}
+
+
+
+
+	public int getBaseMoney() {
+		return baseMoney;
+	}
+
+
+
+
+	public boolean isShowReport() {
+		return showReport;
+	}
+
+
+
+
+	public void setShowReport(boolean showReport) {
+		this.showReport = showReport;
+	}
+
+
+
+
+	public int getStatus() {
+		return status;
+	}
+
+
+
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+
+
+
+	public int getMsgCount() {
+		return msgCount;
+	}
+
+
+
+
+	public void setMsgCount(int msgCount) {
+		this.msgCount = msgCount;
+	}
+
+
+
+
+	public void setBaseMoney(int baseMoney) {
+		this.baseMoney = baseMoney;
 	}
 
 
@@ -81,6 +212,20 @@ public class GiftItem implements Serializable{
 
 	public void setFinishTime(long finishTime) {
 		this.finishTime = finishTime;
+	}
+
+
+
+
+	public String getCode() {
+		return code;
+	}
+
+
+
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 

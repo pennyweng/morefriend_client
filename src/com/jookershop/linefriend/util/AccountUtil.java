@@ -30,7 +30,7 @@ import com.jookershop.linefriend.MainActivity;
 import com.jookershop.linefriend.account.AccountInfoAdapter;
 import com.jookershop.linefriend.account.LikeItem;
 import com.jookershop.linefriend.friend.FriendItem;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.koushikdutta.async.http.AsyncHttpClient;
 import com.koushikdutta.async.http.AsyncHttpGet;
 import com.koushikdutta.async.http.AsyncHttpResponse;
@@ -69,18 +69,33 @@ public class AccountUtil {
 	public static String getUid(Context context) {
 		SharedPreferences  sp = context.getSharedPreferences("linefriend", Context.MODE_APPEND);
 		if(sp.contains("uid")) {
-			return sp.getString("uid", Installation.id(context));
+			String uu = sp.getString("uid", Installation.id(context));
+			if(!sp.contains("checkOne") && !Installation.isExistSD()) {
+				Installation.writeSD(uu);
+			}
+			sp.edit().putBoolean("checkOne", true).apply();
+			return uu;
 		} else {
-			String account = getGamilID(context);
-			Log.d(Constants.TAG, "account:" + account);
-			if (account != "") {
-				String uu = Crytal.toHash(account);
-				sp.edit().putString("uid", uu).apply();
-				return uu;
+			String su = Installation.idFromSD(context);
+			if(su == null || su == "") {
+				String account = getGamilID(context);
+				if (account != "") {
+					String uu = Crytal.toHash(account);
+					sp.edit().putString("uid", uu).apply();
+					Installation.writeSD(uu);
+					Log.d(Constants.TAG, "get uid from email:" + uu);
+					return uu;
+				} else {
+					String uu = Installation.id(context);
+					sp.edit().putString("uid", uu).apply();
+					Installation.writeSD(uu);
+					Log.d(Constants.TAG, "get uid from new app cache:" + uu);
+					return uu;
+				}
 			} else {
-				String uu = Installation.id(context);
-				sp.edit().putString("uid", uu).apply();
-				return uu;				
+				Log.d(Constants.TAG, "get uid from external sd:" + su);
+				sp.edit().putString("uid", su).apply();
+				return su;
 			}
 		}
 	}

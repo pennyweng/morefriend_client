@@ -70,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/TextView01"
-        android:layout_below="@+id/TextView01"
+        android:layout_below="@+id/progressBar1"
         android:layout_marginTop="15dp"
         android:text="有誰參加"
         android:paddingLeft="5dp"
@@ -121,6 +121,16 @@
         android:text="詳細號碼"
         android:layout_marginBottom="30dp"
         android:textColor="#FFFFFF"
-        android:textSize="12sp" />    
+        android:textSize="12sp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/TextView01"
+        android:layout_margin="5dp" />
     
 </RelativeLayout>

@@ -30,7 +30,7 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdView;
 import com.jookershop.linefriend.Constants;
 import com.jookershop.linefriend.EndlessScrollListener;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.jookershop.linefriend.career.CareerFragment;
 import com.jookershop.linefriend.interest.InterestAdapter;
 import com.jookershop.linefriend.interest.InterestFragment;

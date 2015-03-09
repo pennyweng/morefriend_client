@@ -22,13 +22,13 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_above="@+id/rl2"
-    android:layout_below="@+id/rl"
+    android:layout_below="@+id/textView1"
+    android:divider="#038F9E"
+    android:dividerHeight="10dp"
     android:gravity="center"
     android:horizontalSpacing="2dp"
     android:numColumns="1"
     android:padding="10dp"
-    android:dividerHeight="10dp"
-    android:divider="#038F9E"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         ads:adSize="SMART_BANNER"
-        ads:adUnitId="ca-app-pub-6177946832323310/8693094123" >
+        ads:adUnitId="ca-app-pub-9943629122951220/7624660391" >
     </com.google.android.gms.ads.AdView>
         
     </RelativeLayout>
@@ -62,5 +62,16 @@
         android:visibility="invisible"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:text="" />
 
 </RelativeLayout>

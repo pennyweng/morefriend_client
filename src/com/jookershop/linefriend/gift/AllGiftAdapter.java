@@ -31,7 +31,7 @@ import com.jookershop.linefriend.discuss.AllPostAdapter;
 import com.jookershop.linefriend.discuss.CreateDiscussActivity;
 import com.jookershop.linefriend.util.AccountUtil;
 import com.jookershop.linefriend.util.Message;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.koushikdutta.async.http.AsyncHttpClient;
 import com.koushikdutta.async.http.AsyncHttpGet;
 import com.koushikdutta.async.http.AsyncHttpResponse;
@@ -75,7 +75,7 @@ public class AllGiftAdapter extends ArrayAdapter<GiftItem> {
 			viewHolder.progressBar1 = (ProgressBar) rowView.findViewById(R.id.progressBar1);
 			viewHolder.attend = (Button) rowView
 					.findViewById(R.id.button1);
-			viewHolder.gidTv = (TextView) rowView.findViewById(R.id.textView3);
+//			viewHolder.gidTv = (TextView) rowView.findViewById(R.id.textView3);
 			
 
 			rowView.setTag(viewHolder);
@@ -85,24 +85,26 @@ public class AllGiftAdapter extends ArrayAdapter<GiftItem> {
 		holder.title.setText(postItem.getName());
 		MainActivity.imageLoader.displayImage(postItem.getImgUrl(), holder.icon, options,
 				new SimpleImageLoadingListener(), null);
-		holder.maxCount.setText("領獎資格：參加" + postItem.getMaxCount() + "次，目前已參加" + postItem.getClickCount() + "次");
+		holder.maxCount.setText("領獎資格：參加" + postItem.getnMaxCount() + "次，目前已參加" + postItem.getClickCount() + "次");
 		holder.progressBar1.setMax(postItem.getMaxCount());
 		holder.progressBar1.setProgress(postItem.getClickCount());
 		
-		if(Constants.IS_SUPER) {
-			holder.gidTv.setText(postItem.getId());
-			holder.gidTv.setVisibility(View.VISIBLE);
-		} else holder.gidTv.setVisibility(View.INVISIBLE);
+//		if(Constants.IS_SUPER) {
+//			holder.gidTv.setText(postItem.getId());
+//			holder.gidTv.setVisibility(View.VISIBLE);
+//		} else holder.gidTv.setVisibility(View.INVISIBLE);
 		
 		holder.attend.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				if (!sp.contains(Constants.LINE_STORE_KEY)) {
-					Message.ShowMsgDialog(mContext, "請先填寫右上方的基本資料!");
-				} else {
+//				if (!sp.contains(Constants.LINE_STORE_KEY)) {
+//					Message.ShowMsgDialog(mContext, "請先填寫右上方的基本資料!");
+//				} else {
 					checkTime(postItem);
-				}
+//				}
+				
+//				addTask(postItem);
 
 			}
 		});
@@ -110,6 +112,53 @@ public class AllGiftAdapter extends ArrayAdapter<GiftItem> {
 		return rowView;
 	}
 
+	
+	private void addTask(final GiftItem gi) {
+		String uid = URLEncoder.encode(AccountUtil.getUid(mContext));
+		final String id = gi.getId();
+		final String giftType = gi.getType();
+		
+		String url = Constants.BASE_URL + "queue/add?uid=" + uid
+				+ "&lgid=" + id + "&giftType=" + giftType;
+
+		Log.d(Constants.TAG, "gift addTask play url " + url);
+		AsyncHttpGet get = new AsyncHttpGet(url);
+
+		AsyncHttpClient.getDefaultInstance().executeString(get,
+				new AsyncHttpClient.StringCallback() {
+
+					@Override
+					public void onCompleted(Exception e,
+							AsyncHttpResponse source, final String result) {
+						if (e != null) {
+							Message.ShowMsgDialog(mContext,
+									"Opps....發生錯誤, 請稍後再試！");
+							e.printStackTrace();
+							return;
+						}
+						((Activity) mContext).runOnUiThread(new Runnable() {
+							public void run() {
+								if(result.equals("err:1")) {
+									Message.ShowMsgDialog(mContext, 
+											"超過可排隊領取的數量，已無法新增。請先等待排隊中的獎項領取完畢或者是移除，");
+								} else if(result.equals("err:2")) {
+									Message.ShowMsgDialog(mContext, 
+											"此獎項已經正在排隊或者是已領取，");
+								} else if(result.indexOf("errmsg:") != -1) {
+									Message.ShowMsgDialog(mContext,result.split(":")[1]);
+								} else {
+									Message.ShowMsgDialog(mContext, "領取的排隊號碼為" + result + "號");
+//									((FragmentActivity) mContext).getSupportFragmentManager()
+//									.beginTransaction()
+//									.replace(R.id.container,
+//											AllGiftFragment.newInstance()).commit();
+								}
+							}
+						});
+					}
+				});
+	}
+	
 	static class ViewHolder {
 		protected ImageView icon;
 		protected TextView title;
@@ -130,6 +179,12 @@ public class AllGiftAdapter extends ArrayAdapter<GiftItem> {
 					+ "&lgid=" + id;			
 		} else if(giftType.equals(GiftItem.TYPE_MONEY)) {
 			url = Constants.BASE_URL + "gift/money/next_time?uid=" + uid
+					+ "&lgid=" + id;			
+		} else if(giftType.equals(GiftItem.TYPE_BAG)) {
+			url = Constants.BASE_URL + "gift/bag/next_time?uid=" + uid
+					+ "&lgid=" + id;			
+		}else if(giftType.equals(GiftItem.TYPE_SE)) {
+			url = Constants.BASE_URL + "gift/se/next_time?uid=" + uid
 					+ "&lgid=" + id;			
 		}
 
@@ -163,7 +218,7 @@ public class AllGiftAdapter extends ArrayAdapter<GiftItem> {
 												+ s + "分鐘才能再玩一次");
 									}
 								} else {
-									if(giftType.equals(GiftItem.TYPE_LINE)) {
+//									if(giftType.equals(GiftItem.TYPE_LINE)) {
 										((FragmentActivity) mContext)
 										.getSupportFragmentManager()
 										.beginTransaction()
@@ -172,17 +227,17 @@ public class AllGiftAdapter extends ArrayAdapter<GiftItem> {
 												ClickADFragment
 														.newInstance(gi))
 										.addToBackStack("alldivine").commit();
-									}	
-									if(giftType.equals(GiftItem.TYPE_MONEY)) {
-										((FragmentActivity) mContext)
-										.getSupportFragmentManager()
-										.beginTransaction()
-										.replace(
-												R.id.container,
-												ClickADFragment
-														.newInstance(gi))
-										.addToBackStack("alldivine").commit();
-									}								
+//									}	
+//									else if(giftType.equals(GiftItem.TYPE_MONEY)) {
+//										((FragmentActivity) mContext)
+//										.getSupportFragmentManager()
+//										.beginTransaction()
+//										.replace(
+//												R.id.container,
+//												ClickADFragment
+//														.newInstance(gi))
+//										.addToBackStack("alldivine").commit();
+//									}
 								}
 
 							}

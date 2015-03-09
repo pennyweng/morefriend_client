@@ -16,7 +16,7 @@
         android:layout_width="wrap_content" 
         android:layout_height="wrap_content"
     android:textColor="#FFFFFF"
-    android:background="#FF9D00"
+    android:background="#FF3333"
         android:layout_weight="1" 
         android:layout_marginRight="2dp"
         android:text="確定">
@@ -26,7 +26,7 @@
         android:layout_width="wrap_content" 
         android:layout_height="wrap_content"
         android:layout_weight="1" 
-        android:background="#FF9D00"
+        android:background="#FF3333"
     android:textColor="#FFFFFF"
         android:text="返回">
     </Button>
@@ -48,7 +48,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/editText1"
         ads:adSize="SMART_BANNER"
-        ads:adUnitId="ca-app-pub-6177946832323310/8693094123" >
+        ads:adUnitId="ca-app-pub-9943629122951220/7624660391" >
     </com.google.android.gms.ads.AdView>
 
     <TextView

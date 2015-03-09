@@ -72,6 +72,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
+        android:padding="5dp"
+        android:layout_marginRight="5dp"
+        android:textColor="#FFFFFF"
+        android:background="#042191"
         android:layout_alignTop="@+id/pp"
         android:text="中獎碼:GFS" />
 

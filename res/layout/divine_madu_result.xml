@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#FF9D00"
+            android:background="#FF3333"
             android:text="返回"
             android:textColor="#FFFFFF" >
         </Button>

@@ -38,8 +38,7 @@
     android:layout_above="@+id/LinearLayout02"
     android:layout_alignParentLeft="true"
     android:layout_alignRight="@+id/LinearLayout02"
-    android:hint="留言"
-    android:maxLength="50" >
+    android:hint="留言" >
 
     <requestFocus />
 </EditText>
@@ -63,7 +62,7 @@
     android:layout_alignParentTop="true"
     android:layout_alignRight="@+id/editText1"
     android:layout_marginBottom="2dp"
-    android:background="#FF9D00"
+    android:background="#FF3333"
     android:padding="10dp" >
 
 <TextView

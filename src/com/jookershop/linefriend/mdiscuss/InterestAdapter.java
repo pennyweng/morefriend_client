@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.jookershop.linefriend.Constants;
 import com.jookershop.linefriend.MainActivity;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.jookershop.linefriend.friend.AllFriendFragment;
 import com.jookershop.linefriend.friend.FriendFragment;
 import com.jookershop.linefriend.subcategory.SubCategoryFragment;

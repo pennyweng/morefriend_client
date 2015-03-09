@@ -2,7 +2,7 @@ package com.jookershop.linefriend;
 
 import java.util.HashMap;
 
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class Constants {
@@ -27,10 +27,10 @@ public class Constants {
 	public static String IMAGE_BASE_URL = "http://www.jookershop.com:9001/linefriend/";
 	
 //	public static String BASE_URL = "http://54.66.133.177:9001/linefriend/";
-//	public static String BASE_URL = "http://192.168.1.105:9000/linefriend/";
+//	public static String BASE_URL = "http://192.168.1.110:9000/linefriend/";
 //	public static String IMAGE_BASE_URL = "http://54.66.133.177:9001/linefriend/";	
 	
-	public static Boolean IS_SUPER = true;
+	public static Boolean IS_SUPER = false;
 	
 	public static String TAG = "linefriend";
 	

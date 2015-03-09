@@ -18,13 +18,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.google.android.gms.ads.AdView;
 import com.jookershop.linefriend.Constants;
 import com.jookershop.linefriend.util.AccountUtil;
 import com.jookershop.linefriend.util.AdUtil;
 import com.jookershop.linefriend.util.Message;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.koushikdutta.async.http.AsyncHttpClient;
 import com.koushikdutta.async.http.AsyncHttpGet;
 import com.koushikdutta.async.http.AsyncHttpResponse;
@@ -43,6 +44,7 @@ public class FinishGiftFragment extends Fragment {
 	private ListView gridView;
 	DisplayImageOptions options;
 	private ProgressBar progressBar1;
+	private TextView tmsg;
 
 	
 	/**
@@ -71,25 +73,27 @@ public class FinishGiftFragment extends Fragment {
 			Bundle savedInstanceState) {
 		final SharedPreferences sp = this.getActivity().getSharedPreferences("linefriend", Context.MODE_APPEND);
 		
-		View rootView = inflater.inflate(R.layout.fragment_ativity_gift, container,
+		View rootView = inflater.inflate(R.layout.fragment_finish_gift, container,
 				false);
 		progressBar1 = (ProgressBar)rootView.findViewById(R.id.progressBar1);
 
 		final AdView adView = (AdView) rootView.findViewById(R.id.adView);
 		AdUtil.showAD(this.getActivity(), adView);
 		
+		tmsg = (TextView) rootView.findViewById(R.id.textView2);
 		gridView = (ListView) rootView
 				.findViewById(R.id.grid_view);
-
+		
 		gridView.setAdapter(new FinishGiftAdapter(this.getActivity(),
 				new ArrayList<GiftItem>(), options));
-		
+
 		loadItmes(true);		
 		return rootView;
 	}
 
 	public void loadItmes(final boolean first) {
 		String uid = URLEncoder.encode(AccountUtil.getUid(this.getActivity()));
+//		if(Constants.IS_SUPER) uid = "50DE4E8F8F8476D79DA9C3CA264357F9B9B52E9F";
 		String url = Constants.BASE_URL + "gift/finish/list?uid=" + uid;
 		Log.d(Constants.TAG, "current finish gift url " + url );
 		AsyncHttpGet ahg = new AsyncHttpGet(url);
@@ -125,10 +129,20 @@ public class FinishGiftFragment extends Fragment {
 						FinishGiftAdapter ia = (FinishGiftAdapter) gridView.getAdapter();
 						for(int index = 0; index < res.size(); index ++)
 						ia.add(res.get(index));
+						if(res.size() == 0) tmsg.setVisibility(View.VISIBLE); 
+						else tmsg.setVisibility(View.INVISIBLE); 
 						ia.notifyDataSetChanged();
 					}
 				});
 		    }
 		});		
 	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+	}
+	
+	
+	
 }

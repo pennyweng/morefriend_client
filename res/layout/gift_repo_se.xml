@@ -1,0 +1,98 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="5dp" >
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:text="超值商品申請步驟"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView2"
+        android:ems="10"
+        android:hint="步驟一:輸入您的郵遞區號" />
+
+    <EditText
+        android:id="@+id/EditText01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/editText1"
+        android:layout_below="@+id/editText1"
+        android:ems="10"
+        android:hint="步驟二:輸入您的收件地址" >
+
+    </EditText>
+
+<LinearLayout
+    android:id="@+id/LinearLayout02"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true" >
+
+    <Button
+        android:id="@+id/Button02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="2dp"
+        android:layout_weight="1"
+        android:background="#FF3333"
+        android:text="確定"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/Button03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#FF3333"
+        android:text="返回"
+        android:textColor="#FFFFFF" />
+</LinearLayout>
+
+<EditText
+    android:id="@+id/EditText02"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignLeft="@+id/EditText01"
+    android:layout_alignRight="@+id/EditText01"
+    android:layout_below="@+id/EditText01"
+    android:ems="10"
+    android:hint="步驟三:輸入收件人" />
+
+<EditText
+    android:id="@+id/EditText03"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignLeft="@+id/EditText02"
+    android:layout_alignRight="@+id/EditText02"
+    android:layout_below="@+id/EditText02"
+    android:ems="10"
+    android:hint="步驟四:輸入手機號碼" />
+    
+
+<TextView
+    android:id="@+id/textView3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/EditText03"
+    android:layout_centerHorizontal="true"
+    android:layout_margin="10dp"
+    android:layout_marginTop="18dp"
+    android:paddingTop="30dp"
+    android:text="恭喜您完成《超值商品》任務！下面幾點提醒您:\n1.請提供收件人姓名、手機號碼、寄件地址 (含郵遞區號)。\n2.獎品將於收到前述資料後2週內掛號寄出。\n3.若因提供錯誤資訊導致獎品無法順利寄達，將不再重寄，請務必提供正確資料。"
+    android:textColor="#424242"
+    android:textSize="12sp" /> 
+</RelativeLayout>

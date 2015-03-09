@@ -20,7 +20,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:background="#FF9D00"
+        android:background="#FF3333"
         android:padding="5dp" >
 
         <ImageView
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:background="#FF9D00"
+            android:background="#FF3333"
             android:text="..."
             android:textColor="#FFFFFF"
             android:textSize="22sp"
@@ -64,6 +64,17 @@
             android:textSize="32sp"
             android:textStyle="bold"
             android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView1"
+            android:layout_alignBottom="@+id/textView1"
+            android:layout_toRightOf="@+id/textView1"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:text="2.2.2 beta" />
 
     </RelativeLayout>
 

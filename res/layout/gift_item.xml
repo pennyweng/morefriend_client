@@ -13,13 +13,16 @@
         android:background="#FFB300"
         android:textColor="#FFFFFF"
         android:layout_margin="5dp"
-        android:text="參加" />
+        android:textSize="14sp"
+        android:text="我要\n參加" />
 
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginTop="10dp"
+        android:scaleType="fitXY"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="3dp"
         android:layout_alignParentLeft="true"
@@ -31,6 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/button1"
+        android:layout_toLeftOf="@+id/button1"
         android:layout_toRightOf="@+id/imageView1"
         android:text="xxx" />
 
@@ -54,14 +58,5 @@
         android:layout_below="@+id/textView2"
         android:layout_toLeftOf="@+id/button1"
         android:progress="0" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageView1"
-        android:layout_below="@+id/imageView1"
-        android:text="xxxxxxxxxxx"
-        android:textSize="10sp" />
 
 </RelativeLayout>

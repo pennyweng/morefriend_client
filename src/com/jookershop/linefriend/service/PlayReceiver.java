@@ -18,7 +18,7 @@ import android.util.Log;
 
 import com.jookershop.linefriend.Constants;
 import com.jookershop.linefriend.MainActivity;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.jookershop.linefriend.friend.FriendItem;
 import com.jookershop.linefriend.msg.MessageItem;
 import com.jookershop.linefriend.util.AccountUtil;

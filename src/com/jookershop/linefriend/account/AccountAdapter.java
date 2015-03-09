@@ -21,7 +21,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.jookershop.linefriend.Constants;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 
 
 public class AccountAdapter extends BaseAdapter {

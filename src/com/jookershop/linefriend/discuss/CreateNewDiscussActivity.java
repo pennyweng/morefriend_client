@@ -24,6 +24,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.InputFilter;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -38,7 +39,7 @@ import android.widget.TextView;
 
 import com.jookershop.linefriend.Constants;
 import com.jookershop.linefriend.MainActivity;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.jookershop.linefriend.account.AccountActivity;
 import com.jookershop.linefriend.util.AccountUtil;
 import com.jookershop.linefriend.util.Message;
@@ -82,7 +83,10 @@ public class CreateNewDiscussActivity extends Activity {
 		title.setText(tt);
 
 		final TextView data = (TextView) this.findViewById(R.id.editText1);
-
+		int maxLength = 50;
+		if(Constants.IS_SUPER) maxLength = 3000; 
+		data.setFilters(new InputFilter[] {new InputFilter.LengthFilter(maxLength)});			
+			
 		Button bt = (Button) this.findViewById(R.id.Button03);
 //		bt.setBackgroundColor(Color.parseColor(mainColor));
 		bt.setOnClickListener(new View.OnClickListener() {

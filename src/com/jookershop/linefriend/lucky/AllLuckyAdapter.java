@@ -21,6 +21,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.jookershop.linefriend.Constants;
@@ -28,7 +29,7 @@ import com.jookershop.linefriend.MainActivity;
 import com.jookershop.linefriend.util.AccountUtil;
 import com.jookershop.linefriend.util.ImageHelper;
 import com.jookershop.linefriend.util.Message;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.koushikdutta.async.http.AsyncHttpClient;
 import com.koushikdutta.async.http.AsyncHttpGet;
 import com.koushikdutta.async.http.AsyncHttpResponse;
@@ -77,6 +78,7 @@ public class AllLuckyAdapter extends ArrayAdapter<LuckyItem> {
 					.findViewById(R.id.Button02);
 			viewHolder.image = (ImageView) rowView
 					.findViewById(R.id.imageView1);
+			viewHolder.pb = (ProgressBar) rowView.findViewById(R.id.progressBar1);
 			
 			rowView.setTag(viewHolder);
 		}
@@ -86,6 +88,8 @@ public class AllLuckyAdapter extends ArrayAdapter<LuckyItem> {
 		
 		MainActivity.imageLoader.displayImage(postItem.getImage(), holder.image, ImageHelper.emptyHeadOptions);
 		
+		holder.pb.setMax(postItem.getMaxCount());
+		holder.pb.setProgress(postItem.getCurrentCount());
 		holder.explain.setText(Html.fromHtml(postItem.getDesc()));
 		holder.award.setText(Html.fromHtml(postItem.getAward()));
 		holder.people.setText(postItem.getCurrentCount() + "人參加");
@@ -227,6 +231,7 @@ public class AllLuckyAdapter extends ArrayAdapter<LuckyItem> {
 		protected Button people;
 		protected Button mynumber;
 		protected TextView go;
+		protected ProgressBar pb;
 	}
 
 	private void checkTime(final String lkid, final String title) {

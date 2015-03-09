@@ -21,7 +21,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.jookershop.linefriend.Constants;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.jookershop.linefriend.util.AccountUtil;
 import com.jookershop.linefriend.util.Message;
 import com.koushikdutta.async.http.AsyncHttpClient;

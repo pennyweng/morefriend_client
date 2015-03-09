@@ -26,7 +26,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.jookershop.linefriend.Constants;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.jookershop.linefriend.friend.FriendAdapter;
 import com.jookershop.linefriend.friend.FriendFragment;
 import com.jookershop.linefriend.util.AccountUtil;

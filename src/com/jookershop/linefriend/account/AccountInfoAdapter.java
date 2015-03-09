@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 
 
 public class AccountInfoAdapter extends BaseAdapter {

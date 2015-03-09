@@ -22,9 +22,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         android:background="#FFFFFF" 
        	app:pstsShouldExpand="true"
  		app:pstsDividerColor="#00000000"
-        app:pstsIndicatorColor="#FCD16D"
+        app:pstsIndicatorColor="#FF919E"
         app:pstsTabPaddingLeftRight="14dip"
-        app:pstsUnderlineColor="#FCD16D"       
+        app:pstsUnderlineColor="#FF919E"       
         
         >
     </com.astuetz.PagerSlidingTabStrip>

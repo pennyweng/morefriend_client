@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mm="http://millennialmedia.com/android/schema"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#005999" >
+
+    <LinearLayout
+        android:id="@+id/LinearLayout02"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="6dp" >
+
+        <Button
+            android:id="@+id/Button02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            android:background="#FF3333"
+            android:text="送出"
+            android:textColor="#FFFFFF" >
+        </Button>
+
+        <Button
+            android:id="@+id/Button03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FF3333"
+            android:text="返回"
+            android:textColor="#FFFFFF" >
+        </Button>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="謝謝您來參加！下面幾點提醒您:\n1.參加者需要點選並確實開啟廣告後才能送出。\n2.每個廣告所需的開啟時間不一定，麻煩耐心等候。\n3.廣告無法保證每次都會出現，就算出現也無法保證每次都能順利開啟，請見諒。"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/LinearLayout02"
+        android:layout_alignParentLeft="true" >
+
+    </RelativeLayout>
+
+</RelativeLayout>

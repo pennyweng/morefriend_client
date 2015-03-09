@@ -21,7 +21,7 @@ import android.widget.ProgressBar;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.jookershop.linefriend.util.DisplayUtil;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
 

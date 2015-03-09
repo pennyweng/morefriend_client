@@ -5,7 +5,7 @@ import java.io.InputStream;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.jookershop.linefriend.Constants;
 import com.jookershop.linefriend.MainActivity;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 
 import android.app.IntentService;
 import android.app.Notification;

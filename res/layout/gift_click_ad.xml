@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="2dp"
             android:layout_weight="1"
-            android:background="#FF9D00"
+            android:background="#FF3333"
             android:text="送出"
             android:textColor="#FFFFFF" >
         </Button>
@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#FF9D00"
+            android:background="#FF3333"
             android:text="返回"
             android:textColor="#FFFFFF" >
         </Button>
@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             ads:adSize="SMART_BANNER"
-            ads:adUnitId="ca-app-pub-6177946832323310/8693094123" >
+            ads:adUnitId="ca-app-pub-9943629122951220/7624660391" >
         </com.google.android.gms.ads.AdView>
 
         <TextView

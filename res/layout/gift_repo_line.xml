@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="5dp" >
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:text="LINE貼圖申請步驟"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView2"
+        android:ems="10"
+        android:hint="步驟一:輸入您的LINE ID" />
+
+    <EditText
+        android:id="@+id/EditText01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/editText1"
+        android:layout_below="@+id/editText1"
+        android:ems="10"
+        android:hint="步驟二:輸入您的LINE暱稱" >
+
+    </EditText>
+
+<TextView
+    android:id="@+id/textView1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignLeft="@+id/EditText01"
+    android:layout_alignRight="@+id/EditText01"
+    android:layout_below="@+id/EditText01"
+    android:layout_marginTop="10dp"
+    android:paddingLeft="10dp"
+    android:text="步驟三:加入版主的LINE帳號\nahappychat"
+    android:textColor="#828282"
+    android:textSize="18sp" />
+
+<LinearLayout
+    android:id="@+id/LinearLayout02"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignLeft="@+id/textView1"
+    android:layout_alignParentBottom="true" >
+
+    <Button
+        android:id="@+id/Button02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="2dp"
+        android:layout_weight="1"
+        android:background="#FF3333"
+        android:text="確定"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/Button03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#FF3333"
+        android:text="返回"
+        android:textColor="#FFFFFF" />
+</LinearLayout>
+
+<TextView
+    android:id="@+id/textView3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignLeft="@+id/textView1"
+    android:layout_below="@+id/textView1"
+    android:layout_margin="10dp"
+	android:textColor="#424242"
+	android:textSize="12sp"
+	android:paddingTop="30dp"
+    android:text="恭喜您達成目標！下面幾點提醒您:\n1.申請之貼圖在資料審核完成後，預計五日內送出。\n2.每組獎勵碼為唯一碼，不得重覆使用。領獎時認碼不認人，請妥善保管，因獎勵碼外洩或分享所造成之損失概不負責喔。\n3.兌獎期間請暫時不要更改顯示名稱，以免貼圖無法順利發送。更改顯示名稱將延誤貼圖發送。請務必配合哦" />
+    
+</RelativeLayout>

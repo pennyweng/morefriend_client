@@ -1,0 +1,98 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="5dp" >
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:text="現金申請步驟"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView2"
+        android:ems="10"
+        android:hint="步驟一:輸入您的銀行名稱" />
+
+    <EditText
+        android:id="@+id/EditText01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/editText1"
+        android:layout_below="@+id/editText1"
+        android:ems="10"
+        android:hint="步驟二:輸入您的銀行代碼" >
+
+    </EditText>
+
+<LinearLayout
+    android:id="@+id/LinearLayout02"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true" >
+
+    <Button
+        android:id="@+id/Button02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="2dp"
+        android:layout_weight="1"
+        android:background="#FF3333"
+        android:text="確定"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/Button03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#FF3333"
+        android:text="返回"
+        android:textColor="#FFFFFF" />
+</LinearLayout>
+
+<EditText
+    android:id="@+id/EditText02"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignLeft="@+id/EditText01"
+    android:layout_alignRight="@+id/EditText01"
+    android:layout_below="@+id/EditText01"
+    android:ems="10"
+    android:hint="步驟三:輸入您的銀行帳號" />
+
+<EditText
+    android:id="@+id/EditText03"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignLeft="@+id/EditText02"
+    android:layout_alignRight="@+id/EditText02"
+    android:layout_below="@+id/EditText02"
+    android:ems="10"
+    android:hint="步驟四:輸入您的戶名" />
+
+<TextView
+    android:id="@+id/textView3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/EditText03"
+    android:layout_centerHorizontal="true"
+    android:layout_margin="10dp"
+    android:layout_marginTop="18dp"
+    android:paddingTop="30dp"
+    android:text="恭喜您完成《現金獎》任務！下面幾點提醒您:\n1.請提供銀行帳號及戶名（郵局或中國信託帳號免手續費，其他行庫將扣除轉帳手續費15元）。\n2.每組獎勵碼為唯一碼，不得重覆使用。領獎時認碼不認人，請妥善保管，因獎勵碼外洩或分享所造成之損失概不負責喔。\n3.獎勵金將於收到前述資料並確認無誤後2週內入帳。"
+    android:textColor="#424242"
+    android:textSize="12sp" />
+    
+</RelativeLayout>

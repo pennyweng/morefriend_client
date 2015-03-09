@@ -8,7 +8,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:background="#FF9D00"
+        android:background="#FF3333"
         android:padding="10dp"
         android:text="傳送訊息"
         android:textColor="#FFFFFF"

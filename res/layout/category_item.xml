@@ -11,7 +11,7 @@
         android:layout_below="@+id/imageView1"
         android:layout_centerHorizontal="true"
         android:text="電影"
-        android:textColor="#FC7E00"
+        android:textColor="#EB0000"
         android:textSize="20sp" />
 
     <ImageView

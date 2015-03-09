@@ -15,7 +15,7 @@ import android.widget.ProgressBar;
 
 import com.google.android.gms.ads.AdView;
 import com.jookershop.linefriend.util.AdUtil;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
 

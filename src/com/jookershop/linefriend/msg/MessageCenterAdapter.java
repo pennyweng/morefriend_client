@@ -10,10 +10,10 @@ import org.json.JSONObject;
 
 import com.jookershop.linefriend.Constants;
 import com.jookershop.linefriend.MainActivity;
-import com.jookershop.linefriend3.R;
-import com.jookershop.linefriend3.R.drawable;
-import com.jookershop.linefriend3.R.id;
-import com.jookershop.linefriend3.R.layout;
+import com.jookershop.linefriend4.R;
+import com.jookershop.linefriend4.R.drawable;
+import com.jookershop.linefriend4.R.id;
+import com.jookershop.linefriend4.R.layout;
 import com.jookershop.linefriend.account.AccountActivity;
 import com.jookershop.linefriend.account.AccountAdapter;
 import com.jookershop.linefriend.account.AccountInfoAdapter;

@@ -38,7 +38,7 @@ import com.astuetz.PagerSlidingTabStrip;
 import com.google.android.gms.ads.AdView;
 import com.jookershop.linefriend.Constants;
 import com.jookershop.linefriend.EndlessScrollListener;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.jookershop.linefriend.career.CareerFragment;
 import com.jookershop.linefriend.interest.InterestAdapter;
 import com.jookershop.linefriend.interest.InterestFragment;
@@ -125,7 +125,8 @@ public class AllGiftFragment extends Fragment {
 
 	public class MyPagerAdapter extends FragmentPagerAdapter {
 
-		private final String[] TITLES = { "免費LINE貼圖", "免費現金獎", "完成獎勵" };
+//		private final String[] TITLES = { "免費LINE貼圖", "免費現金獎", "免費台彩刮刮樂", "免費超值商品", "可領取獎勵" };
+		private final String[] TITLES = { "免費LINE貼圖", "免費現金獎", "免費台彩刮刮樂", "免費超值商品", "可領取獎勵" };		
 
 		public MyPagerAdapter(FragmentManager fm) {
 			super(fm);
@@ -144,9 +145,13 @@ public class AllGiftFragment extends Fragment {
 		@Override
 		public Fragment getItem(int position) {
 			if(position == 0)
-			return ActiveGiftFragment.newInstance();
+				return ActiveGiftFragment.newInstance();
 			else if(position == 1)
 				return ActiveMoneyFragment.newInstance();
+			else if(position == 2)
+				return ActiveBagFragment.newInstance();
+			else if(position == 3)
+				return ActiveProductFragment.newInstance();
 			else return FinishGiftFragment.newInstance();
 		}
 

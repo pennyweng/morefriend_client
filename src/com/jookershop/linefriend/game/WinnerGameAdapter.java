@@ -35,7 +35,7 @@ import com.jookershop.linefriend.game.HistoryItemAdapter.ViewHolder;
 import com.jookershop.linefriend.util.AccountUtil;
 import com.jookershop.linefriend.util.ImageHelper;
 import com.jookershop.linefriend.util.Message;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.koushikdutta.async.http.AsyncHttpClient;
 import com.koushikdutta.async.http.AsyncHttpGet;
 import com.koushikdutta.async.http.AsyncHttpResponse;

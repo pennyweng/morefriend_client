@@ -19,12 +19,12 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_height="44dip"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:background="#FFF1E8" 
+        android:background="#FFE8EA" 
        	app:pstsShouldExpand="true"
  		app:pstsDividerColor="#00000000"
-        app:pstsIndicatorColor="#FCD16D"
+        app:pstsIndicatorColor="#FF919E"
         app:pstsTabPaddingLeftRight="14dip"
-        app:pstsUnderlineColor="#FCD16D"       
+        app:pstsUnderlineColor="#FF919E"       
         
         >
     </com.astuetz.PagerSlidingTabStrip>

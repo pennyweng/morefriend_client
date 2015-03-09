@@ -47,8 +47,8 @@
         android:layout_width="wrap_content" 
         android:layout_height="wrap_content"
         android:textSize="14sp"
-        android:background="#F0CC02"
-        android:textColor="#424242"
+        android:background="#B3243E"
+        android:textColor="#FFFFFF"
         android:layout_weight="1" 
         android:text="解除封鎖">
     </Button>

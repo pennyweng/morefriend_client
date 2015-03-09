@@ -24,7 +24,7 @@ import com.jookershop.linefriend.Constants;
 import com.jookershop.linefriend.util.AccountUtil;
 import com.jookershop.linefriend.util.AdUtil;
 import com.jookershop.linefriend.util.Message;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.koushikdutta.async.http.AsyncHttpClient;
 import com.koushikdutta.async.http.AsyncHttpGet;
 import com.koushikdutta.async.http.AsyncHttpResponse;
@@ -91,7 +91,7 @@ public class ActiveLuckyFragment extends Fragment {
 
 	public void loadItmes(final boolean first) {
 		String uid = URLEncoder.encode(AccountUtil.getUid(this.getActivity()));
-		String url = Constants.BASE_URL + "lucky/list?uid=" + uid;
+		String url = Constants.BASE_URL + "lucky/nlist?uid=" + uid;
 		Log.d(Constants.TAG, "current lucky url " + url );
 		AsyncHttpGet ahg = new AsyncHttpGet(url);
 		AsyncHttpClient.getDefaultInstance().executeJSONArray(ahg, new AsyncHttpClient.JSONArrayCallback() {

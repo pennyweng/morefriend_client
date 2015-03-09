@@ -49,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         ads:adSize="SMART_BANNER"
-        ads:adUnitId="ca-app-pub-6177946832323310/8693094123" >
+        ads:adUnitId="ca-app-pub-9943629122951220/7624660391" >
     </com.google.android.gms.ads.AdView>
         
     </RelativeLayout>
@@ -82,8 +82,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:textColor="#FFFFFF"
-        android:textSize="10sp"
+        android:textSize="8sp"
         android:padding="5dp"
-        android:text="請中獎者於14天內主動加入版主帳號ahappychat，並告知您的中獎碼，以利後續寄送作業。若未於14天內通知版主或中獎碼不正確者，將喪失領獎資格。獎品將於資料確認後兩週內寄出，若有問題歡迎跟版主詢問。" />
+        android:text="每組獎勵碼為唯一碼，不得重複使用。領獎時認碼不認人，請妥善保管，因獎勵碼外洩或分享所造成之損失概不負責喔。請完成者於14天內主動加入版主帳號ahappychat，並告知您的獎勵碼，以利後續作業。否則喪失領獎資格。所有獎勵將於資料確認後三天內送出，若有問題歡迎跟版主詢問。" />
 
 </RelativeLayout>

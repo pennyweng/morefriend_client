@@ -30,7 +30,7 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdView;
 import com.jookershop.linefriend.Constants;
 import com.jookershop.linefriend.MainActivity;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.jookershop.linefriend.util.AccountUtil;
 import com.jookershop.linefriend.util.AdUtil;
 import com.jookershop.linefriend.util.Message;

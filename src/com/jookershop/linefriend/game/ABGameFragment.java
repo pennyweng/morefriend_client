@@ -2,6 +2,7 @@ package com.jookershop.linefriend.game;
 
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Random;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -46,7 +47,10 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.jookershop.linefriend.Constants;
 import com.jookershop.linefriend.EndlessScrollListener;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
+import com.jookershop.linefriend.ad.ADResult;
+import com.jookershop.linefriend.ad.AdmobAD;
+import com.jookershop.linefriend.ad.VponAD;
 import com.jookershop.linefriend.career.CareerFragment;
 import com.jookershop.linefriend.constellation.ConstellationFragment;
 import com.jookershop.linefriend.interest.InterestAdapter;
@@ -162,6 +166,20 @@ public class ABGameFragment extends Fragment {
 			gi = (GameItem)this.getArguments().getSerializable("gi");
 		} else return rootView;
 		
+		final ADResult adr = new ADResult();
+		final ADResult adr1 = new ADResult();
+		if(new Random().nextInt() % 2 == 0) {
+			RelativeLayout adRelativeLayout3 = (RelativeLayout) rootView.findViewById(R.id.rl3);
+			AdmobAD.show(mContext, adr, adRelativeLayout3);
+			RelativeLayout adRelativeLayout4 = (RelativeLayout) rootView.findViewById(R.id.rl4);
+			VponAD.show(mContext, adr1, adRelativeLayout4);
+		} else {
+			RelativeLayout adRelativeLayout3 = (RelativeLayout) rootView.findViewById(R.id.rl4);
+			AdmobAD.show(mContext, adr, adRelativeLayout3);
+			RelativeLayout adRelativeLayout4 = (RelativeLayout) rootView.findViewById(R.id.rl3);
+			VponAD.show(mContext, adr1, adRelativeLayout4);
+		}
+		
 		TextView currentTv = (TextView) rootView.findViewById(R.id.textView2);
 		String ss = gi.getSmallNumber() + "-" + gi.getBigNumber() + "猜" + gi.getNumber() + "個數字\n中間用逗點隔開";
 		currentTv.setText(ss);
@@ -183,8 +201,8 @@ public class ABGameFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-				if (!click) {
-					Message.ShowMsgDialog(mContext, "請先點選下方廣告");
+				if (!adr.isClick() && !adr1.isClick()) {
+					Message.ShowMsgDialog(mContext, "請用行動支持有興趣的廣告。如果沒有看到廣告，請過一陣子在玩。");
 				} else if(guessNumber.getText().toString() == "" || !(
 						guessNumber.getText().toString().split(",").length == gi.getNumber() || 
 						guessNumber.getText().toString().split("，").length == gi.getNumber())
@@ -302,55 +320,55 @@ public class ABGameFragment extends Fragment {
 			}
 		});
 
-		final AdView adView = (AdView) rootView.findViewById(R.id.adView);
-		AdRequest adRequest = new AdRequest.Builder().build();
-		adView.loadAd(adRequest);
-		adView.setAdListener(new AdListener() {
-			@Override
-			public void onAdClosed() {
-				super.onAdClosed();
-				Log.d(Constants.TAG, "google ad onAdClosed");
-			}
-
-			@Override
-			public void onAdFailedToLoad(int errorCode) {
-				// TODO Auto-generated method stub
-				super.onAdFailedToLoad(errorCode);
-				Log.d(Constants.TAG, "google ad error" + errorCode);
-				click = true;
-			}
-
-			@Override
-			public void onAdLeftApplication() {
-				// TODO Auto-generated method stub
-				super.onAdLeftApplication();
-				Log.d(Constants.TAG, "google ad onAdLeftApplication");
-				click = true;
-				// sp.edit().putLong(Constants.KEY_CLICK_AD,
-				// System.currentTimeMillis()).commit();
-				// adView.setLayoutParams(new
-				// LayoutParams(LayoutParams.MATCH_PARENT, 0));
-			}
-
-			@Override
-			public void onAdLoaded() {
-				super.onAdLoaded();
-				Log.d(Constants.TAG, "google ad load");
-
-			}
-
-			@Override
-			public void onAdOpened() {
-				super.onAdOpened();
-				Log.d(Constants.TAG, "google ad onAdOpened");
-				click = true;
-				// sp.edit().putLong(Constants.KEY_CLICK_AD,
-				// System.currentTimeMillis()).commit();
-				// adView.setLayoutParams(new
-				// LayoutParams(LayoutParams.MATCH_PARENT, 0));
-			}
-
-		});
+//		final AdView adView = (AdView) rootView.findViewById(R.id.adView);
+//		AdRequest adRequest = new AdRequest.Builder().build();
+//		adView.loadAd(adRequest);
+//		adView.setAdListener(new AdListener() {
+//			@Override
+//			public void onAdClosed() {
+//				super.onAdClosed();
+//				Log.d(Constants.TAG, "google ad onAdClosed");
+//			}
+//
+//			@Override
+//			public void onAdFailedToLoad(int errorCode) {
+//				// TODO Auto-generated method stub
+//				super.onAdFailedToLoad(errorCode);
+//				Log.d(Constants.TAG, "google ad error" + errorCode);
+//				click = true;
+//			}
+//
+//			@Override
+//			public void onAdLeftApplication() {
+//				// TODO Auto-generated method stub
+//				super.onAdLeftApplication();
+//				Log.d(Constants.TAG, "google ad onAdLeftApplication");
+//				click = true;
+//				// sp.edit().putLong(Constants.KEY_CLICK_AD,
+//				// System.currentTimeMillis()).commit();
+//				// adView.setLayoutParams(new
+//				// LayoutParams(LayoutParams.MATCH_PARENT, 0));
+//			}
+//
+//			@Override
+//			public void onAdLoaded() {
+//				super.onAdLoaded();
+//				Log.d(Constants.TAG, "google ad load");
+//
+//			}
+//
+//			@Override
+//			public void onAdOpened() {
+//				super.onAdOpened();
+//				Log.d(Constants.TAG, "google ad onAdOpened");
+//				click = true;
+//				// sp.edit().putLong(Constants.KEY_CLICK_AD,
+//				// System.currentTimeMillis()).commit();
+//				// adView.setLayoutParams(new
+//				// LayoutParams(LayoutParams.MATCH_PARENT, 0));
+//			}
+//
+//		});
 		return rootView;
 	}
 

@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:background="#000000"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+		android:layout_margin="10dp"
+        android:text=" 謝謝您來簽到！下面幾點提醒您:\n1.簽到的目的是為了維持住目前您所有獎勵的排隊號碼。請記得每日都來簽到。\n2.缺少簽到，排隊號碼會自動往後。\n3.五天內沒有任何簽到，會自動取消所有獎勵的排隊號碼。\n4.廣告是此服務最主要的收入，請支持我們。"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayout02"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="6dp" >
+
+        <Button
+            android:id="@+id/Button02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            android:background="#FF3333"
+            android:text="簽到"
+            android:textColor="#FFFFFF" >
+        </Button>
+
+        <Button
+            android:id="@+id/Button03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FF3333"
+            android:text="返回"
+            android:textColor="#FFFFFF" >
+        </Button>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_above="@+id/relativeLayout2"
+        android:layout_alignParentLeft="true" >
+    </RelativeLayout>
+
+
+
+        
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_above="@+id/LinearLayout02"
+        android:layout_alignParentLeft="true" >
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_above="@+id/relativeLayout1"
+        android:layout_alignParentLeft="true" >
+    </RelativeLayout>
+
+</RelativeLayout>

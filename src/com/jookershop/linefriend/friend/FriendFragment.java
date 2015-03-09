@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 import com.google.android.gms.ads.AdView;
 import com.jookershop.linefriend.Constants;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.jookershop.linefriend.discuss.FriendDiscussFragment;
 import com.jookershop.linefriend.util.AdUtil;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;

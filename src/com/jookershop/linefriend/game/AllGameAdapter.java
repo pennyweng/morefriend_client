@@ -29,7 +29,7 @@ import com.jookershop.linefriend.discuss.AllPostAdapter;
 import com.jookershop.linefriend.discuss.CreateDiscussActivity;
 import com.jookershop.linefriend.util.AccountUtil;
 import com.jookershop.linefriend.util.Message;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.koushikdutta.async.http.AsyncHttpClient;
 import com.koushikdutta.async.http.AsyncHttpGet;
 import com.koushikdutta.async.http.AsyncHttpResponse;

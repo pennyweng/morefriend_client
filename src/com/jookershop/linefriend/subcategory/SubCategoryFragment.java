@@ -27,7 +27,7 @@ import com.jookershop.linefriend.interest.InterestFragment;
 import com.jookershop.linefriend.old.OldFragment;
 import com.jookershop.linefriend.place.PlaceFragment;
 import com.jookershop.linefriend.util.DisplayUtil;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
 

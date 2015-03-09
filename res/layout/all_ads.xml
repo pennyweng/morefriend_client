@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:background="#000000"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+		android:layout_margin="10dp"
+        android:text="謝謝您來參加！下面幾點提醒您:\n1.下面廣告若您有興趣，請多多支持他們。\n2.若廣告無法順利出現時，請過一陣子在來參加。\n3.本公司保有該活動之進行，停止或者辦法修改權利。若有任何意外導致無法兌換，請多見諒。\n願意參加者視為同意上述規則。"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayout02"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="6dp" >
+
+        <Button
+            android:id="@+id/Button02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            android:background="#FF3333"
+            android:text="送出"
+            android:textColor="#FFFFFF" >
+        </Button>
+
+        <Button
+            android:id="@+id/Button03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FF3333"
+            android:text="返回"
+            android:textColor="#FFFFFF" >
+        </Button>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_above="@+id/relativeLayout2"
+        android:layout_alignParentLeft="true" >
+    </RelativeLayout>
+
+
+
+        
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_above="@+id/LinearLayout02"
+        android:layout_alignParentLeft="true" >
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_above="@+id/relativeLayout1"
+        android:layout_alignParentLeft="true" >
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:textColor="#FFFFFF"
+        android:background="#FF3333"
+        android:layout_marginLeft="10dp"
+        android:textSize="14sp"
+        android:padding="5dp"
+        android:text="特殊任務" />
+
+</RelativeLayout>

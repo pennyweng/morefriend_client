@@ -18,13 +18,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.google.android.gms.ads.AdView;
 import com.jookershop.linefriend.Constants;
 import com.jookershop.linefriend.util.AccountUtil;
 import com.jookershop.linefriend.util.AdUtil;
 import com.jookershop.linefriend.util.Message;
-import com.jookershop.linefriend3.R;
+import com.jookershop.linefriend4.R;
 import com.koushikdutta.async.http.AsyncHttpClient;
 import com.koushikdutta.async.http.AsyncHttpGet;
 import com.koushikdutta.async.http.AsyncHttpResponse;
@@ -43,7 +44,7 @@ public class ActiveGiftFragment extends Fragment {
 	private ListView gridView;
 	DisplayImageOptions options;
 	private ProgressBar progressBar1;
-
+	private TextView title;
 	
 	/**
 	 * Returns a new instance of this fragment for the given section number.
@@ -73,6 +74,7 @@ public class ActiveGiftFragment extends Fragment {
 		
 		View rootView = inflater.inflate(R.layout.fragment_ativity_gift, container,
 				false);
+		title = (TextView) rootView.findViewById(R.id.textView1);
 		progressBar1 = (ProgressBar)rootView.findViewById(R.id.progressBar1);
 
 		final AdView adView = (AdView) rootView.findViewById(R.id.adView);
@@ -84,13 +86,50 @@ public class ActiveGiftFragment extends Fragment {
 		gridView.setAdapter(new AllGiftAdapter(this.getActivity(),
 				new ArrayList<GiftItem>(), options));
 		
-		loadItmes(true);		
+		loadItmes(true);
+		loadTitleCount();
 		return rootView;
 	}
 
+	public void loadTitleCount() {
+		String uid = URLEncoder.encode(AccountUtil.getUid(this.getActivity()));
+		String url = Constants.BASE_URL + "gift/line/next_time?uid=" + uid;
+		Log.d(Constants.TAG, "current loadTitleCount url " + url );
+		AsyncHttpGet ahg = new AsyncHttpGet(url);
+		AsyncHttpClient.getDefaultInstance().executeString(ahg, new AsyncHttpClient.StringCallback() {
+		    @Override
+		    public void onCompleted(Exception e, AsyncHttpResponse response, final String result) {
+		    	if (e != null) {
+		            e.printStackTrace();
+		            return;
+		        }
+		    	
+				if(ActiveGiftFragment.this != null && ActiveGiftFragment.this.getActivity()!= null)
+					ActiveGiftFragment.this.getActivity().runOnUiThread(new Runnable() {
+					public void run() {
+						String tt = "";
+						int s = Integer.parseInt(result) / 60000;
+						if(s > 0) {
+							if (s >= 60) {
+								int h = s / 60;
+								int m = s % 60;
+								tt =  "下次參加時間為" + h + "小時又" + m + "分鐘之後";
+	
+							} else {
+								tt =  "下次參加時間為" + s + "分鐘之後";
+							}						
+							
+							title.setText(tt);
+						}
+					}
+				});
+		    }
+		});		
+	}
+	
 	public void loadItmes(final boolean first) {
 		String uid = URLEncoder.encode(AccountUtil.getUid(this.getActivity()));
-		String url = Constants.BASE_URL + "gift/line/list?uid=" + uid;
+		String url = Constants.BASE_URL + "gift/line/nlist?uid=" + uid;
 		Log.d(Constants.TAG, "current line gift url " + url );
 		AsyncHttpGet ahg = new AsyncHttpGet(url);
 		AsyncHttpClient.getDefaultInstance().executeJSONArray(ahg, new AsyncHttpClient.JSONArrayCallback() {

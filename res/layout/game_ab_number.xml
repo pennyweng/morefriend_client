@@ -16,7 +16,7 @@
         android:layout_width="wrap_content" 
         android:layout_height="wrap_content"
     android:textColor="#FFFFFF"
-    android:background="#FF9D00"
+    android:background="#FF3333"
         android:layout_weight="1" 
         android:layout_marginRight="2dp"
         android:text="確定">
@@ -26,7 +26,7 @@
         android:layout_width="wrap_content" 
         android:layout_height="wrap_content"
         android:layout_weight="1" 
-        android:background="#FF9D00"
+        android:background="#FF3333"
     android:textColor="#FFFFFF"
         android:text="返回">
     </Button>
@@ -99,26 +99,20 @@
         android:maxLength="15"
         android:ems="10" />
 
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
+
+    <RelativeLayout
+        android:id="@+id/rl3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/editText2"
-        ads:adSize="SMART_BANNER"
-        ads:adUnitId="ca-app-pub-6177946832323310/8693094123" >
-    </com.google.android.gms.ads.AdView>
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
+        android:layout_below="@+id/editText2" >
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl4"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/adView"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:text="注意：參加此遊戲者需要點選並開啟上方廣告後才能送出！"
-        android:textColor="#FFFFFF"
-        android:textSize="12sp" />
+        android:layout_below="@+id/rl3" >
+    </RelativeLayout>
 
 </RelativeLayout>

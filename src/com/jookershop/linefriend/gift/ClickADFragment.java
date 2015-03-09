@@ -1,67 +1,59 @@
 package com.jookershop.linefriend.gift;
 
 import java.net.URLEncoder;
-import java.util.ArrayList;
+import java.util.Random;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
+import net.youmi.android.offers.OffersManager;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.GridView;
-import android.widget.ListView;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
-import android.widget.TabHost;
-import android.widget.TextView;
-import android.widget.RelativeLayout.LayoutParams;
 
-import com.astuetz.PagerSlidingTabStrip;
+
+
+import android.widget.RelativeLayout;
+
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+//import com.google.android.gms.ads.AdListener;
+//import com.google.android.gms.ads.AdRequest;
+//import com.google.android.gms.ads.AdView;
 import com.jookershop.linefriend.Constants;
-import com.jookershop.linefriend.EndlessScrollListener;
-import com.jookershop.linefriend3.R;
-import com.jookershop.linefriend.career.CareerFragment;
-import com.jookershop.linefriend.constellation.ConstellationFragment;
-import com.jookershop.linefriend.game.GameItem;
-import com.jookershop.linefriend.interest.InterestAdapter;
-import com.jookershop.linefriend.interest.InterestFragment;
-import com.jookershop.linefriend.old.OldFragment;
-import com.jookershop.linefriend.place.PlaceFragment;
+import com.jookershop.linefriend.ad.ADResult;
+import com.jookershop.linefriend.ad.AdBuddizAD;
+import com.jookershop.linefriend.ad.AdColonyAD;
+import com.jookershop.linefriend.ad.AdmobAD;
+import com.jookershop.linefriend.ad.AppMaAD;
+import com.jookershop.linefriend.ad.AppnextAD;
+import com.jookershop.linefriend.ad.AxonixAD;
+import com.jookershop.linefriend.ad.DomobAD;
+import com.jookershop.linefriend.ad.DomobOffer;
+import com.jookershop.linefriend.ad.FlurryAD;
+import com.jookershop.linefriend.ad.Leadbolt;
+import com.jookershop.linefriend.ad.MillennialAD;
+import com.jookershop.linefriend.ad.StartAppAD;
+import com.jookershop.linefriend.ad.VponAD;
+import com.jookershop.linefriend.ad.VungleAD;
+import com.jookershop.linefriend.ad.YoumiAD;
 import com.jookershop.linefriend.util.AccountUtil;
-import com.jookershop.linefriend.util.AdUtil;
-import com.jookershop.linefriend.util.DisplayUtil;
 import com.jookershop.linefriend.util.Message;
+import com.jookershop.linefriend4.R;
 import com.koushikdutta.async.http.AsyncHttpClient;
 import com.koushikdutta.async.http.AsyncHttpGet;
-import com.koushikdutta.async.http.AsyncHttpRequest;
 import com.koushikdutta.async.http.AsyncHttpResponse;
+//import com.millennialmedia.android.MMAdView;
+//import com.millennialmedia.android.MMRequest;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
 /**
@@ -72,8 +64,6 @@ public class ClickADFragment extends Fragment {
 	 * The fragment argument representing the section number for this fragment.
 	 */
 	DisplayImageOptions options;
-	private boolean click;
-
 
 	/**
 	 * Returns a new instance of this fragment for the given section number.
@@ -87,6 +77,7 @@ public class ClickADFragment extends Fragment {
 	}
 
 	public ClickADFragment() {
+		
 		options = new DisplayImageOptions.Builder()
 				// .showImageOnLoading(R.drawable.emptyhead)
 				.showImageForEmptyUri(R.drawable.noimage)
@@ -104,16 +95,96 @@ public class ClickADFragment extends Fragment {
 		final SharedPreferences sp = this.getActivity().getSharedPreferences(
 				"linefriend", Context.MODE_APPEND);
 
-		View rootView = inflater.inflate(R.layout.gift_click_ad, container,
-				false);
+//		View rootView = inflater.inflate(R.layout.gift_click_interstitial, container,
+//				false);
+//
+//		View rootView = inflater.inflate(R.layout.gift_click_axonix, container,
+//				false);
+		
+//		View rootView = inflater.inflate(R.layout.gift_click_millen, container,
+//				false);
+
+		View rootView = inflater.inflate(R.layout.all_ads2, container,
+		false);
 		
 		final GiftItem gi;
 		if(this.getArguments() != null) {
 			gi = (GiftItem)this.getArguments().getSerializable("gi");
 		} else return rootView;
+
+		final ADResult adr1 = new ADResult();
+		final ADResult adr2 = new ADResult();
+		final ADResult adr3 = new ADResult();
+		
+		RelativeLayout adRelativeLayout1 = (RelativeLayout) rootView.findViewById(R.id.relativeLayout1);		
+		VponAD.show(ClickADFragment.this.getActivity(), adr1, adRelativeLayout1);
+		RelativeLayout adRelativeLayout2 = (RelativeLayout) rootView.findViewById(R.id.relativeLayout2);
+		AdmobAD.show(ClickADFragment.this.getActivity(), adr2, adRelativeLayout2);
+		RelativeLayout adRelativeLayout3 = (RelativeLayout) rootView.findViewById(R.id.relativeLayout3);
+//		YoumiAD.show(ClickADFragment.this.getActivity(), adr3, adRelativeLayout3);
+		DomobAD.show(ClickADFragment.this.getActivity(), adr3, adRelativeLayout3);
+//		AppMaAD.show(ClickADFragment.this.getActivity(), adr3, adRelativeLayout3);
+		
+		Button bt = (Button) rootView.findViewById(R.id.button1);
+		bt.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+//				OffersManager.getInstance(ClickADFragment.this.getActivity()).showOffersWall();
+//				VungleAD.show(ClickADFragment.this.getActivity(), adr3);
+//				DomobOffer.show(ClickADFragment.this.getActivity());
+				AdColonyAD.show(ClickADFragment.this.getActivity());
+			}
+		});
 		
 		
+//		//		final ADResult adr3 = new ADResult();
+//		if(new Random().nextInt(100) % 3 == 0) {
+//			RelativeLayout adRelativeLayout1 = (RelativeLayout) rootView.findViewById(R.id.relativeLayout1);
+//			FlurryAD.show(ClickADFragment.this.getActivity(), adr1, adRelativeLayout1);
+//			
+//		} else if(new Random().nextInt(100) % 3 == 1) {
+//			RelativeLayout adRelativeLayout1 = (RelativeLayout) rootView.findViewById(R.id.relativeLayout3);
+//			FlurryAD.show(ClickADFragment.this.getActivity(), adr1, adRelativeLayout1);
+//			RelativeLayout adRelativeLayout2 = (RelativeLayout) rootView.findViewById(R.id.relativeLayout1);		
+//			VponAD.show(ClickADFragment.this.getActivity(), adr2, adRelativeLayout2);
+//			RelativeLayout adRelativeLayout3 = (RelativeLayout) rootView.findViewById(R.id.relativeLayout2);
+//			AdmobAD.show(ClickADFragment.this.getActivity(), adr3, adRelativeLayout3);
+//			
+//		} else {
+//			RelativeLayout adRelativeLayout1 = (RelativeLayout) rootView.findViewById(R.id.relativeLayout2);
+//			FlurryAD.show(ClickADFragment.this.getActivity(), adr1, adRelativeLayout1);
+//			RelativeLayout adRelativeLayout2 = (RelativeLayout) rootView.findViewById(R.id.relativeLayout3);		
+//			VponAD.show(ClickADFragment.this.getActivity(), adr2, adRelativeLayout2);
+//			RelativeLayout adRelativeLayout3 = (RelativeLayout) rootView.findViewById(R.id.relativeLayout1);
+//			AdmobAD.show(ClickADFragment.this.getActivity(), adr3, adRelativeLayout3);
+//		}
+//		RelativeLayout adRelativeLayout1 = (RelativeLayout) rootView.findViewById(R.id.relativeLayout1);
+//		FlurryAD.show(ClickADFragment.this.getActivity(), adr, adRelativeLayout1);
+//		RelativeLayout adRelativeLayout2 = (RelativeLayout) rootView.findViewById(R.id.relativeLayout2);		
+//		VponAD.show(ClickADFragment.this.getActivity(), adr, adRelativeLayout2);
+//		RelativeLayout adRelativeLayout3 = (RelativeLayout) rootView.findViewById(R.id.relativeLayout3);
+//		AdmobAD.show(ClickADFragment.this.getActivity(), adr, adRelativeLayout3);
 		
+//		AxonixAD.show(ClickADFragment.this.getActivity(), adr, rootView);
+//		StartAppAD.show(ClickADFragment.this.getActivity(), adr, adRelativeLayout3);
+//		RelativeLayout adRelativeLayout4 = (RelativeLayout) rootView.findViewById(R.id.relativeLayout4);		
+//		MillennialAD.show(ClickADFragment.this.getActivity(), adr, adRelativeLayout4);
+		
+		
+//		Button showAdBt = (Button) rootView.findViewById(R.id.button1);
+//		showAdBt.setOnClickListener(new View.OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+////				AppnextAD.show(ClickADFragment.this.getActivity(), adr);
+////				Leadbolt.show(ClickADFragment.this.getActivity(), adr);
+////				AxonixAD.show(ClickADFragment.this.getActivity(), adr);
+//				AdBuddizAD.show(ClickADFragment.this.getActivity(), adr);
+//			}
+//		});
+		
+
 		Button cancel = (Button) rootView.findViewById(R.id.Button03);
 		cancel.setOnClickListener(new View.OnClickListener() {
 			
@@ -129,18 +200,36 @@ public class ClickADFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-				if (!click) {
-					Message.ShowMsgDialog(mContext, "請先點選下方廣告");
+				int loadCount = 0;
+				if(adr1.isLoad()) loadCount = loadCount + 1;
+				if(adr2.isLoad()) loadCount = loadCount + 1;
+				
+				int clickCount = 0;
+				if(adr1.isClick()) clickCount = clickCount + 1;
+				if(adr2.isClick()) clickCount = clickCount + 1;
+				
+				if (loadCount < 2) {
+					Message.ShowMsgDialog(mContext, "有一點點問題，請稍候再嘗試。[ERR1]");
+				} else if (clickCount < 2) {
+					Message.ShowMsgDialog(mContext, "有一點點問題，請稍候再嘗試。[ERR2]");
 				} else {
 					final String uid = URLEncoder.encode(AccountUtil.getUid(mContext));
 					String url = "";
 					
 					if(gi.getType().equals(GiftItem.TYPE_LINE))
-						url = Constants.BASE_URL + "gift/line/play?uid=" + uid 
+						url = Constants.BASE_URL + "gift/line/nplay?uid=" + uid 
 								+ "&lgid=" + gi.getId() 
 								+ "&lid=" + URLEncoder.encode(sp.getString(Constants.LINE_STORE_KEY, ""));
 					else if(gi.getType().equals(GiftItem.TYPE_MONEY))
-						url = Constants.BASE_URL + "gift/money/play?uid=" + uid 
+						url = Constants.BASE_URL + "gift/money/nplay?uid=" + uid 
+						+ "&lgid=" + gi.getId() 
+						+ "&lid=" + URLEncoder.encode(sp.getString(Constants.LINE_STORE_KEY, ""));
+					else if(gi.getType().equals(GiftItem.TYPE_BAG))
+						url = Constants.BASE_URL + "gift/bag/nplay?uid=" + uid 
+						+ "&lgid=" + gi.getId() 
+						+ "&lid=" + URLEncoder.encode(sp.getString(Constants.LINE_STORE_KEY, ""));
+					else  if(gi.getType().equals(GiftItem.TYPE_SE))
+						url = Constants.BASE_URL + "gift/se/nplay?uid=" + uid 
 						+ "&lgid=" + gi.getId() 
 						+ "&lid=" + URLEncoder.encode(sp.getString(Constants.LINE_STORE_KEY, ""));
 					else return;
@@ -193,9 +282,14 @@ public class ClickADFragment extends Fragment {
 													} else if(result.indexOf("achived") != -1) {
 														Builder MyAlertDialog = new AlertDialog.Builder(
 																mContext);
-														String rec = gi.getId().substring(0, 3);
+														
+														String uid = AccountUtil.getUid(mContext);
+														String rec = gi.getId().substring(0, 3) + "_" + uid.substring(0,3);
+														if(gi.getCode() != null)
+															rec = gi.getCode();
+														
 														MyAlertDialog
-																.setMessage("恭喜您完成了此個人獎勵。請立即加入版主的LINE ID:ahappychat，並主動告知您的完成碼是" + rec + "。");
+																.setMessage("恭喜您完成了此個人獎勵。請儘速到完成獎勵區兌換。");
 														DialogInterface.OnClickListener OkClick = new DialogInterface.OnClickListener() {
 															public void onClick(
 																	DialogInterface dialog,
@@ -237,73 +331,76 @@ public class ClickADFragment extends Fragment {
 			}
 		});
 
-		final AdView adView = (AdView) rootView.findViewById(R.id.adView);
-		AdRequest adRequest = new AdRequest.Builder().build();
-		adView.loadAd(adRequest);
-		adView.setAdListener(new AdListener() {
-			@Override
-			public void onAdClosed() {
-				super.onAdClosed();
-				Log.d(Constants.TAG, "google ad onAdClosed");
-			}
-
-			@Override
-			public void onAdFailedToLoad(int errorCode) {
-				// TODO Auto-generated method stub
-				super.onAdFailedToLoad(errorCode);
-				Log.d(Constants.TAG, "google ad error" + errorCode);
+//		final AdView adView = (AdView) rootView.findViewById(R.id.adView);
+////		adView.setAdUnitId("");
+//		AdRequest adRequest = new AdRequest.Builder().build();
+//		adView.loadAd(adRequest);
+//		adView.setAdListener(new AdListener() {
+//			@Override
+//			public void onAdClosed() {
+//				super.onAdClosed();
+//				Log.d(Constants.TAG, "google ad onAdClosed");
+//			}
+//
+//			@Override
+//			public void onAdFailedToLoad(int errorCode) {
+//				// TODO Auto-generated method stub
+//				super.onAdFailedToLoad(errorCode);
+//				Log.d(Constants.TAG, "google ad error" + errorCode);
+////				click = true;
+//				Builder MyAlertDialog = new AlertDialog.Builder(
+//						mContext);
+//				MyAlertDialog
+//						.setMessage("目前廣告無法秀出，請稍候再嘗試。" );
+//				
+//				DialogInterface.OnClickListener OkClick = new DialogInterface.OnClickListener() {
+//					public void onClick(
+//							DialogInterface dialog,
+//							int which) {
+//						getFragmentManager().popBackStackImmediate();
+//					}
+//				};
+//				MyAlertDialog
+//						.setNeutralButton(
+//								"確認",
+//								OkClick);
+//				MyAlertDialog.show();			
+//			}
+//
+//			@Override
+//			public void onAdLeftApplication() {
+//				// TODO Auto-generated method stub
+//				super.onAdLeftApplication();
+//				Log.d(Constants.TAG, "google ad onAdLeftApplication");
 //				click = true;
-				Builder MyAlertDialog = new AlertDialog.Builder(
-						mContext);
-				MyAlertDialog
-						.setMessage("目前廣告無法秀出，請稍候再嘗試。" );
-				
-				DialogInterface.OnClickListener OkClick = new DialogInterface.OnClickListener() {
-					public void onClick(
-							DialogInterface dialog,
-							int which) {
-						getFragmentManager().popBackStackImmediate();
-					}
-				};
-				MyAlertDialog
-						.setNeutralButton(
-								"確認",
-								OkClick);
-				MyAlertDialog.show();			
-			}
-
-			@Override
-			public void onAdLeftApplication() {
-				// TODO Auto-generated method stub
-				super.onAdLeftApplication();
-				Log.d(Constants.TAG, "google ad onAdLeftApplication");
-				click = true;
-				// sp.edit().putLong(Constants.KEY_CLICK_AD,
-				// System.currentTimeMillis()).commit();
-				// adView.setLayoutParams(new
-				// LayoutParams(LayoutParams.MATCH_PARENT, 0));
-			}
-
-			@Override
-			public void onAdLoaded() {
-				super.onAdLoaded();
-				Log.d(Constants.TAG, "google ad load");
-
-			}
-
-			@Override
-			public void onAdOpened() {
-				super.onAdOpened();
-				Log.d(Constants.TAG, "google ad onAdOpened");
-				click = true;
-				// sp.edit().putLong(Constants.KEY_CLICK_AD,
-				// System.currentTimeMillis()).commit();
-				// adView.setLayoutParams(new
-				// LayoutParams(LayoutParams.MATCH_PARENT, 0));
-			}
-
-		});
+//				// sp.edit().putLong(Constants.KEY_CLICK_AD,
+//				// System.currentTimeMillis()).commit();
+//				// adView.setLayoutParams(new
+//				// LayoutParams(LayoutParams.MATCH_PARENT, 0));
+//			}
+//
+//			@Override
+//			public void onAdLoaded() {
+//				super.onAdLoaded();
+//				Log.d(Constants.TAG, "google ad load");
+//
+//			}
+//
+//			@Override
+//			public void onAdOpened() {
+//				super.onAdOpened();
+//				Log.d(Constants.TAG, "google ad onAdOpened");
+//				click = true;
+//				// sp.edit().putLong(Constants.KEY_CLICK_AD,
+//				// System.currentTimeMillis()).commit();
+//				// adView.setLayoutParams(new
+//				// LayoutParams(LayoutParams.MATCH_PARENT, 0));
+//			}
+//
+//		});
 		return rootView;
 	}
 
+
+	
 }

@@ -26,8 +26,8 @@
         android:id="@+id/Button02"
         android:layout_width="wrap_content" 
         android:layout_height="40dp" 
-        android:background="#F0EEED"
-        android:textColor="#424242"
+        android:background="#E6A100"
+        android:textColor="#FFFFFF"
         android:layout_marginRight="1dp"
         android:textSize="16sp"
         android:layout_weight="1" android:text="我想要新增主題">

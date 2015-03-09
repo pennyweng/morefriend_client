@@ -17,7 +17,7 @@ public class AdUtil {
 	public static final long AD_SHOW_PERIOD = 1209600000l;
 	public static final long ALERT_NEXT_SHOW_PERIOD = 1209600000l;
 	
-	public static void showMsg(Context context) {
+	public static boolean showMsg(Context context) {
 		final SharedPreferences sp = context.getSharedPreferences("linefriend", Context.MODE_APPEND);
 
 			final AlertDialog.Builder builder = new Builder(context);
@@ -52,7 +52,8 @@ public class AdUtil {
 			
 			if(showAd && showAlert) {
 				builder.create().show();
-			} 
+				return true;
+			}  return false;
 
 	}
 

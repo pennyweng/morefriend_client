@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         ads:adSize="SMART_BANNER"
-        ads:adUnitId="ca-app-pub-6177946832323310/8693094123" >
+        ads:adUnitId="ca-app-pub-9943629122951220/7624660391" >
     </com.google.android.gms.ads.AdView>
         
     </RelativeLayout>
@@ -51,9 +51,9 @@
             android:layout_height="40dp"
             android:layout_marginRight="1dp"
             android:layout_weight="1"
-            android:background="#F0EEED"
+            android:background="#E6A100"
             android:text="我想要新增主題"
-            android:textColor="#424242"
+            android:textColor="#FFFFFF"
             android:textSize="16sp"/>
     </LinearLayout>
 
